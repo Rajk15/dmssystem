@@ -263,11 +263,18 @@ button {
 .hero-brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(3.2rem, 12vw, 7.5rem);
+  font-size: clamp(2.35rem, calc((100vw - 3rem) / 7.6), 7.5rem);
   line-height: 0.92;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   margin: 0 0 1.1rem;
+  max-width: 100%;
   animation: rise 0.9s var(--ease) both;
+}
+
+@media (max-width: 480px) {
+  .nav-cta {
+    display: none;
+  }
 }
 
 .hero-title {
