@@ -3,7 +3,7 @@ Contributors: eyzakart
 Requires at least: 5.8
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 
 Doubles the Aqualens 24Hrs NXT Monthly Disposable selling price when OD and OS SPH values differ.
@@ -19,7 +19,7 @@ Pricing rules:
 * Incomplete required fields → does not double; EPO required validation still blocks add-to-cart
 
 Frontend updates ThemeComplete Extra Product Options totals display.
-Cart, checkout, and order line prices are calculated securely on the server.
+Cart, checkout, and order line prices are calculated securely on the server — after ThemeComplete EPO — and stamped so later EPO resets cannot wipe the custom unit price.
 
 == Installation ==
 
@@ -31,6 +31,11 @@ Cart, checkout, and order line prices are calculated securely on the server.
 4. Test on the product page and in cart/checkout.
 
 == Changelog ==
+
+= 1.1.0 =
+* Fix cart/checkout persistence: apply unit price after EPO (PHP_INT_MAX), stamp
+  product objects, and filter get_price so ThemeComplete cannot reset to base price.
+* Preserve working product-page JavaScript unchanged.
 
 = 1.0.0 =
 * Initial release: OD/OS SPH comparison pricing for product 33360.

@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Eyza Eye SPH Conditional Pricing
- * Description: Doubles the Aqualens product price when OD and OS SPH values differ. Same SPH (or "same power for both eyes") keeps the normal selling price. Works with ThemeComplete Extra Product Options.
- * Version: 1.0.0
+ * Description: Doubles the Aqualens product price when OD and OS SPH values differ. Same SPH (or "same power for both eyes") keeps the normal selling price. Works with ThemeComplete Extra Product Options. Enforces the same unit price through cart, checkout, and orders.
+ * Version: 1.1.0
  * Author: EyzaKart
  * Requires at least: 5.8
  * Requires PHP: 7.4
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'EYZA_SPH_PLUGIN_FILE', __FILE__ );
 define( 'EYZA_SPH_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'EYZA_SPH_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'EYZA_SPH_VERSION', '1.0.0' );
+define( 'EYZA_SPH_VERSION', '1.1.0' );
 
 /**
  * Target product ID for Aqualens 24Hrs NXT Monthly Disposable.
@@ -35,10 +35,10 @@ function eyza_sph_field_names() {
 	return (array) apply_filters(
 		'eyza_sph_field_names',
 		array(
-			'od'          => 'tmcp_tmcartfee_select_3',
-			'os'          => 'tmcp_select_4',
-			'both'        => 'tmcp_select_5',
-			'same_power'  => 'tmcp_tmcartfee_checkbox_2_0',
+			'od'         => 'tmcp_tmcartfee_select_3',
+			'os'         => 'tmcp_select_4',
+			'both'       => 'tmcp_select_5',
+			'same_power' => 'tmcp_tmcartfee_checkbox_2_0',
 		)
 	);
 }
@@ -81,7 +81,6 @@ function eyza_sph_normalize( $raw ) {
  */
 function eyza_sph_multiplier( $od, $os, $same_power = false, $both = null ) {
 	if ( $same_power ) {
-		// Combined SPH for both eyes — always a single lens power → 1×.
 		return 1;
 	}
 
@@ -90,7 +89,6 @@ function eyza_sph_multiplier( $od, $os, $same_power = false, $both = null ) {
 	}
 
 	if ( null === $od || null === $os ) {
-		// Incomplete selection: do not double; required-field validation blocks add-to-cart.
 		return 1;
 	}
 
@@ -122,16 +120,80 @@ function eyza_sph_from_request() {
 	$multiplier = eyza_sph_multiplier( $od, $os, $same, $both );
 
 	return array(
-		'od'          => $od,
-		'os'          => $os,
-		'both'        => $both,
-		'same_power'  => (bool) $same,
-		'multiplier'  => $multiplier,
+		'od'         => $od,
+		'os'         => $os,
+		'both'       => $both,
+		'same_power' => (bool) $same,
+		'multiplier' => $multiplier,
 	);
 }
 
 /**
- * Fresh WooCommerce selling price (sale price when applicable).
+ * Fallback: recover OD/OS from ThemeComplete EPO cart rows when POST capture missed.
+ *
+ * @param array $cart_item Cart item.
+ * @return array{od:?string,os:?string,both:?string,same_power:bool}|null
+ */
+function eyza_sph_from_epo_cart_item( $cart_item ) {
+	$od   = null;
+	$os   = null;
+	$both = null;
+	$same = false;
+
+	$rows = array();
+	foreach ( array( 'tmcartepo', 'tmcartfee' ) as $bucket ) {
+		if ( ! empty( $cart_item[ $bucket ] ) && is_array( $cart_item[ $bucket ] ) ) {
+			$rows = array_merge( $rows, $cart_item[ $bucket ] );
+		}
+	}
+
+	foreach ( $rows as $row ) {
+		if ( ! is_array( $row ) ) {
+			continue;
+		}
+
+		$label = '';
+		if ( ! empty( $row['section_label'] ) ) {
+			$label = strtolower( wp_strip_all_tags( (string) $row['section_label'] ) );
+		}
+		if ( ! empty( $row['name'] ) ) {
+			$label .= ' ' . strtolower( wp_strip_all_tags( (string) $row['name'] ) );
+		}
+
+		$value = isset( $row['value'] ) ? eyza_sph_normalize( $row['value'] ) : null;
+		if ( null === $value || ! preg_match( '/^-?\d+(\.\d+)?$/', $value ) ) {
+			// Same-power checkbox text.
+			$raw_value = isset( $row['value'] ) ? strtolower( (string) $row['value'] ) : '';
+			if ( false !== strpos( $raw_value, 'same power' ) ) {
+				$same = true;
+			}
+			continue;
+		}
+
+		if ( false !== strpos( $label, 'left & right' ) || false !== strpos( $label, 'left and right' ) ) {
+			$both = $value;
+			$same = true;
+		} elseif ( false !== strpos( $label, 'right' ) || false !== strpos( $label, 'od (' ) ) {
+			$od = $value;
+		} elseif ( false !== strpos( $label, 'left' ) || false !== strpos( $label, 'os (' ) ) {
+			$os = $value;
+		}
+	}
+
+	if ( null === $od && null === $os && null === $both && ! $same ) {
+		return null;
+	}
+
+	return array(
+		'od'         => $od,
+		'os'         => $os,
+		'both'       => $both,
+		'same_power' => $same,
+	);
+}
+
+/**
+ * Fresh WooCommerce selling price (sale price when applicable). Always from a new product load.
  *
  * @param int $product_id Product ID.
  * @return float
@@ -142,8 +204,87 @@ function eyza_sph_base_price( $product_id ) {
 		return 0.0;
 	}
 
-	// get_price() returns the active selling price (sale or regular).
 	return (float) $product->get_price( 'edit' );
+}
+
+/**
+ * Resolve multiplier + unit price for a cart item; never compounds a previous custom price.
+ *
+ * @param array $cart_item Cart item (by value; caller may write back).
+ * @return array{sph:array,unit_price:float,multiplier:int}|null
+ */
+function eyza_sph_resolve_cart_pricing( $cart_item ) {
+	$product_id = isset( $cart_item['product_id'] ) ? (int) $cart_item['product_id'] : 0;
+	if ( $product_id !== eyza_sph_product_id() ) {
+		return null;
+	}
+
+	$sph = null;
+	if ( ! empty( $cart_item['eyza_sph'] ) && is_array( $cart_item['eyza_sph'] ) ) {
+		$sph = $cart_item['eyza_sph'];
+	} else {
+		$from_epo = eyza_sph_from_epo_cart_item( $cart_item );
+		if ( $from_epo ) {
+			$sph = $from_epo;
+		}
+	}
+
+	if ( ! $sph ) {
+		return null;
+	}
+
+	if ( ! empty( $sph['same_power'] ) && ! empty( $sph['both'] ) ) {
+		$sph['od'] = $sph['both'];
+		$sph['os'] = $sph['both'];
+	}
+
+	$multiplier = eyza_sph_multiplier(
+		isset( $sph['od'] ) ? $sph['od'] : null,
+		isset( $sph['os'] ) ? $sph['os'] : null,
+		! empty( $sph['same_power'] ),
+		isset( $sph['both'] ) ? $sph['both'] : null
+	);
+
+	if ( $multiplier < 1 ) {
+		$multiplier = 1;
+	}
+
+	$base = eyza_sph_base_price( $product_id );
+	if ( $base <= 0 ) {
+		return null;
+	}
+
+	$sph['multiplier'] = $multiplier;
+
+	return array(
+		'sph'        => $sph,
+		'unit_price' => $base * (float) $multiplier,
+		'multiplier' => $multiplier,
+	);
+}
+
+/**
+ * Stamp calculated unit price on the cart product object and set_price().
+ * Custom property survives later EPO set_price() resets when paired with get_price filters.
+ *
+ * @param array $cart_item Cart item.
+ * @return array
+ */
+function eyza_sph_apply_price_to_cart_item( $cart_item ) {
+	$resolved = eyza_sph_resolve_cart_pricing( $cart_item );
+	if ( ! $resolved ) {
+		return $cart_item;
+	}
+
+	$cart_item['eyza_sph']            = $resolved['sph'];
+	$cart_item['eyza_sph_unit_price'] = $resolved['unit_price'];
+
+	if ( ! empty( $cart_item['data'] ) && is_object( $cart_item['data'] ) ) {
+		$cart_item['data']->eyza_sph_calculated_price = $resolved['unit_price'];
+		$cart_item['data']->set_price( $resolved['unit_price'] );
+	}
+
+	return $cart_item;
 }
 
 /**
@@ -156,10 +297,8 @@ add_filter(
 			return $cart_item_data;
 		}
 
-		$sph = eyza_sph_from_request();
+		$sph                        = eyza_sph_from_request();
 		$cart_item_data['eyza_sph'] = $sph;
-
-		// Keep distinct SPH combinations as separate cart lines.
 		$cart_item_data['eyza_sph_key'] = md5(
 			wp_json_encode(
 				array(
@@ -178,7 +317,19 @@ add_filter(
 );
 
 /**
- * Restore SPH data from session.
+ * Apply price when the item is first added to the cart object.
+ */
+add_filter(
+	'woocommerce_add_cart_item',
+	function ( $cart_item ) {
+		return eyza_sph_apply_price_to_cart_item( $cart_item );
+	},
+	999999,
+	1
+);
+
+/**
+ * Restore SPH data from session and re-apply price (EPO may rebuild the product object).
  */
 add_filter(
 	'woocommerce_get_cart_item_from_session',
@@ -189,94 +340,18 @@ add_filter(
 		if ( isset( $values['eyza_sph_key'] ) ) {
 			$cart_item['eyza_sph_key'] = $values['eyza_sph_key'];
 		}
-		return $cart_item;
+		if ( isset( $values['eyza_sph_unit_price'] ) ) {
+			$cart_item['eyza_sph_unit_price'] = $values['eyza_sph_unit_price'];
+		}
+
+		return eyza_sph_apply_price_to_cart_item( $cart_item );
 	},
-	20,
+	999999,
 	2
 );
 
 /**
- * Apply multiplier to cart item product price.
- * Runs late so ThemeComplete EPO option/fee handling settles first; we recalculate
- * from the original product selling price to avoid compounding.
- */
-add_action(
-	'woocommerce_before_calculate_totals',
-	function ( $cart ) {
-		if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
-			return;
-		}
-
-		if ( ! $cart || ! is_object( $cart ) ) {
-			return;
-		}
-
-		$target_id = eyza_sph_product_id();
-		$base      = eyza_sph_base_price( $target_id );
-
-		if ( $base <= 0 ) {
-			return;
-		}
-
-		foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
-			$product_id = isset( $cart_item['product_id'] ) ? (int) $cart_item['product_id'] : 0;
-			if ( $product_id !== $target_id ) {
-				continue;
-			}
-
-			if ( empty( $cart_item['eyza_sph'] ) || ! is_array( $cart_item['eyza_sph'] ) ) {
-				continue;
-			}
-
-			$sph = $cart_item['eyza_sph'];
-
-			// Recompute from stored OD/OS so cart refreshes stay correct.
-			$multiplier = eyza_sph_multiplier(
-				isset( $sph['od'] ) ? $sph['od'] : null,
-				isset( $sph['os'] ) ? $sph['os'] : null,
-				! empty( $sph['same_power'] ),
-				isset( $sph['both'] ) ? $sph['both'] : null
-			);
-
-			if ( $multiplier < 1 ) {
-				$multiplier = 1;
-			}
-
-			// Keep session in sync if recomputed.
-			$cart->cart_contents[ $cart_item_key ]['eyza_sph']['multiplier'] = $multiplier;
-
-			if ( empty( $cart_item['data'] ) || ! is_object( $cart_item['data'] ) ) {
-				continue;
-			}
-
-			/**
-			 * Set unit price from original selling price × multiplier.
-			 * SPH option prices on this product are expected to be 0 (fixed empty).
-			 * Any residual EPO option amounts that ThemeComplete adds separately are preserved
-			 * by not folding them into this set_price call.
-			 */
-			$cart_item['data']->set_price( $base * (float) $multiplier );
-		}
-	},
-	9999
-);
-
-/**
- * Zero out SPH field option/fee prices that would double-count when math formulas
- * like {product_price_plus_options_total} are still configured on some powers (e.g. -10.00).
- */
-add_filter(
-	'wc_epo_adjust_price',
-	function ( $price, $post_data = null ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
-		return $price;
-	},
-	10,
-	2
-);
-
-/**
- * Strip non-zero prices from cart EPO rows that belong to our SPH selects.
- * ThemeComplete stores rows in tmcartepo / tmcartfee.
+ * Zero SPH option/fee row prices early so EPO math leftovers cannot inflate totals.
  */
 add_action(
 	'woocommerce_before_calculate_totals',
@@ -294,7 +369,7 @@ add_action(
 			if ( (int) ( $cart_item['product_id'] ?? 0 ) !== $target_id ) {
 				continue;
 			}
-			if ( empty( $cart_item['eyza_sph'] ) ) {
+			if ( empty( $cart_item['eyza_sph'] ) && empty( $cart_item['tmcartepo'] ) && empty( $cart_item['tmcartfee'] ) ) {
 				continue;
 			}
 
@@ -315,11 +390,9 @@ add_action(
 						$label = strtolower( wp_strip_all_tags( (string) $row['section_label'] ) );
 					}
 
-					$value = isset( $row['value'] ) ? eyza_sph_normalize( $row['value'] ) : null;
-
-					// Match SPH power rows (values like -1.00 / 00.00) under eye sections.
-					$is_sph_value = ( null !== $value && preg_match( '/^-?\d+(\.\d+)?$/', $value ) );
-					$is_sph_label = ( false !== strpos( $label, 'sph' ) );
+					$value         = isset( $row['value'] ) ? eyza_sph_normalize( $row['value'] ) : null;
+					$is_sph_value  = ( null !== $value && preg_match( '/^-?\d+(\.\d+)?$/', $value ) );
+					$is_sph_label  = ( false !== strpos( $label, 'sph' ) );
 
 					if ( $is_sph_value || $is_sph_label ) {
 						$cart->cart_contents[ $cart_item_key ][ $bucket ][ $i ]['price']          = 0;
@@ -331,17 +404,70 @@ add_action(
 					}
 				}
 			}
-
-			// Common EPO aggregated option price keys — zero if present so only our multiplier applies.
-			foreach ( array( 'tm_epo_options_prices', 'tm_epo_product_price_with_options', '_tm_epo_price' ) as $key ) {
-				if ( isset( $cart->cart_contents[ $cart_item_key ][ $key ] ) && ! empty( $cart_item['eyza_sph'] ) ) {
-					// Do not wipe unrelated option prices if other paid options exist later.
-					// Only clear when the stored aggregate equals a product-price-sized bump from SPH math.
-				}
-			}
 		}
 	},
 	5
+);
+
+/**
+ * Apply multiplier AFTER ThemeComplete EPO (often priority ~99999).
+ * Always recalculates from fresh base × multiplier (never doubles an already-doubled price).
+ */
+add_action(
+	'woocommerce_before_calculate_totals',
+	function ( $cart ) {
+		if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
+			return;
+		}
+		if ( ! $cart || ! is_object( $cart ) ) {
+			return;
+		}
+
+		foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
+			$updated = eyza_sph_apply_price_to_cart_item( $cart_item );
+			if ( isset( $updated['eyza_sph'] ) ) {
+				$cart->cart_contents[ $cart_item_key ] = $updated;
+			}
+		}
+	},
+	PHP_INT_MAX
+);
+
+/**
+ * Force get_price() to return our stamped unit price even if EPO calls set_price() later
+ * during the same request with the base selling price.
+ *
+ * @param mixed      $price   Price.
+ * @param WC_Product $product Product.
+ * @return mixed
+ */
+function eyza_sph_filter_get_price( $price, $product ) {
+	if ( is_object( $product ) && isset( $product->eyza_sph_calculated_price ) && is_numeric( $product->eyza_sph_calculated_price ) ) {
+		return $product->eyza_sph_calculated_price;
+	}
+	return $price;
+}
+add_filter( 'woocommerce_product_get_price', 'eyza_sph_filter_get_price', PHP_INT_MAX, 2 );
+add_filter( 'woocommerce_product_variation_get_price', 'eyza_sph_filter_get_price', PHP_INT_MAX, 2 );
+
+/**
+ * Ensure cart line product objects keep the stamped price when templates read them.
+ */
+add_filter(
+	'woocommerce_cart_item_product',
+	function ( $product, $cart_item ) {
+		if ( empty( $cart_item['eyza_sph'] ) || ! is_object( $product ) ) {
+			return $product;
+		}
+		$resolved = eyza_sph_resolve_cart_pricing( $cart_item );
+		if ( $resolved ) {
+			$product->eyza_sph_calculated_price = $resolved['unit_price'];
+			$product->set_price( $resolved['unit_price'] );
+		}
+		return $product;
+	},
+	PHP_INT_MAX,
+	2
 );
 
 /**
@@ -354,7 +480,7 @@ add_filter(
 			return $item_data;
 		}
 
-		$sph = $cart_item['eyza_sph'];
+		$sph  = $cart_item['eyza_sph'];
 		$mult = isset( $sph['multiplier'] ) ? (int) $sph['multiplier'] : 1;
 
 		if ( ! empty( $sph['od'] ) ) {
@@ -383,7 +509,7 @@ add_filter(
 );
 
 /**
- * Persist SPH metadata on the order line item.
+ * Persist SPH metadata on the order line item. Line totals come from cart calculation.
  */
 add_action(
 	'woocommerce_checkout_create_order_line_item',
@@ -405,6 +531,10 @@ add_action(
 		}
 
 		$item->add_meta_data( '_eyza_sph', $sph, true );
+
+		if ( isset( $values['eyza_sph_unit_price'] ) ) {
+			$item->add_meta_data( '_eyza_sph_unit_price', $values['eyza_sph_unit_price'], true );
+		}
 	},
 	20,
 	3
@@ -412,6 +542,7 @@ add_action(
 
 /**
  * Enqueue frontend script only on the target product page.
+ * Product-page calculation logic is unchanged — display only.
  */
 add_action(
 	'wp_enqueue_scripts',
@@ -446,10 +577,10 @@ add_action(
 				'basePrice'  => eyza_sph_base_price( eyza_sph_product_id() ),
 				'fieldNames' => eyza_sph_field_names(),
 				'currency'   => array(
-					'symbol'    => get_woocommerce_currency_symbol(),
-					'decimals'  => wc_get_price_decimals(),
-					'decimal'   => wc_get_price_decimal_separator(),
-					'thousand'  => wc_get_price_thousand_separator(),
+					'symbol'   => get_woocommerce_currency_symbol(),
+					'decimals' => wc_get_price_decimals(),
+					'decimal'  => wc_get_price_decimal_separator(),
+					'thousand' => wc_get_price_thousand_separator(),
 				),
 			)
 		);

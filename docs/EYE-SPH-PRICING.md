@@ -38,14 +38,26 @@ Most SPH options use **empty / fixed 0** prices. A few powers (e.g. `-10.00`) st
 4. Always recalculate from the original base (`data-eyza-sph-base` / localized `basePrice`).
 5. Write the adjusted amount into EPO’s `data-price` and trigger `tm-do-epo-update`.
 
+**Do not change this script when fixing cart/checkout** — product-page pricing is already correct.
+
 ### Server (`eyza-eye-sph-pricing.php`)
 
 1. On add-to-cart, store normalized OD/OS + multiplier in cart item data (`eyza_sph`).
-2. On `woocommerce_before_calculate_totals` (priority 9999), set unit price to `wc_get_product()->get_price() * multiplier`.
-3. Early in calculate totals, zero SPH-related `tmcartepo` / `tmcartfee` row prices to avoid EPO math double-counting.
-4. Persist OD/OS metadata on the order line item.
+2. Apply unit price on `woocommerce_add_cart_item`, `woocommerce_get_cart_item_from_session`, and `woocommerce_before_calculate_totals` at `PHP_INT_MAX` (after ThemeComplete EPO).
+3. Stamp `eyza_sph_calculated_price` on the cart product object and filter `woocommerce_product_get_price` so a later EPO `set_price(base)` cannot wipe the custom unit price.
+4. Always recalculate as `fresh_base_price × multiplier` (never multiply an already-custom price).
+5. Early in calculate totals, zero SPH-related `tmcartepo` / `tmcartfee` row prices to avoid EPO math double-counting.
+6. Persist OD/OS metadata on the order line item.
 
 JavaScript is display-only. Cart, checkout, and orders never trust a client-supplied price.
+
+## Cart/checkout bug (fixed in 1.1.0)
+
+**Symptom:** Product page showed ₹1,798 for different SPH, but cart/checkout used ₹899. Cart item meta still showed OD/OS and “price × 2”.
+
+**Root cause:** ThemeComplete EPO recalculates cart item prices after our old priority `9999` hook and resets the unit price to the base selling price. Metadata was saved; `set_price()` was overwritten.
+
+**Fix:** Run after EPO (`PHP_INT_MAX`) and keep the custom unit price via a stamped product property + `get_price` filter.
 
 ## Scope
 
