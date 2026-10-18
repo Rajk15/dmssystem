@@ -1,0 +1,1248 @@
+{
+  "service_charge_notice": "18% SERVICE CHARGE WILL BE ADDED TO PARTY OF 4 OR MORE",
+  "allergy_notice": "If you have a food allergy or a special dietary requirement please inform a member of staff",
+  "categories": [
+    {
+      "name": "Appetizers",
+      "items": [
+        {
+          "name": "BOMBAY BHEL",
+          "description": "Savoury Indian Snack",
+          "price": 8,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "HARA BHARA KABAB",
+          "description": "Spinach, cheese & potatoe fried patties with herbs and spices",
+          "price": 10,
+          "variants": null,
+          "notes": null,
+          "ambiguous": true,
+          "ambiguity_note": "Price read as 10 (likely slashed zero); OCR frequently returned 16 or 18. Verify against print."
+        },
+        {
+          "name": "CHILI MANGO SHRIMP",
+          "description": "Sweet and spicy jumbo shrimp with mango, ginger glaze",
+          "price": 12,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "FRIED FISH AMRITSARI",
+          "description": "Popular North Indian dish. Fresh water fish marinated with aromatic spices and gram flour. Deep fried until golden crisp",
+          "price": 12,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "JUNGLEE CHICKEN",
+          "description": "Fried Chicken, Onion, Bell Pepper, Ginger & Cilantro tossed in Mint Chutney & House Blend Spices",
+          "price": 13,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "SAMOSA",
+          "description": "Crispy deep-fried with flavorable spices",
+          "price": null,
+          "variants": [
+            {"label": "Veggie", "price": 8},
+            {"label": "Chicken", "price": 11},
+            {"label": "Lamb", "price": 12}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "PAKORA",
+          "description": "Fritters from Indian Subcontinent",
+          "price": null,
+          "variants": [
+            {"label": "Paneer", "price": 9},
+            {"label": "Mirch", "price": 9},
+            {"label": "Mix Veggie", "price": 12}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Soup",
+      "items": [
+        {
+          "name": "MULLIGATAWANY",
+          "description": "Creamy, curry-flavored soup that originate in Southern India made with lentils, pineapples & vegitables.",
+          "price": null,
+          "variants": [
+            {"label": "Veggie", "price": 6},
+            {"label": "Chicken", "price": 9}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "MANCHOW",
+          "description": "Indo-Chinese style soup with hot& spicy flavor",
+          "price": null,
+          "variants": [
+            {"label": "Veggie", "price": 6},
+            {"label": "Chicken", "price": 9}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "HEIRLOOM TOMATO CILANTRO",
+          "description": "Classic tomato soup with cilentro and coconut cream",
+          "price": 8,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "CHICKEN SHORBA",
+          "description": "Light and refreshing soup with coriander, lentils and chicken",
+          "price": 9,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Tandoor",
+      "notes": "CLAY OVEN GRILL",
+      "items": [
+        {
+          "name": "Paneer Shashlik",
+          "description": "Smoky Chargrilled Pieces of Protein Marinated in Aromatic Spices, Yogurt, Ginger & Garlic",
+          "price": 18,
+          "variants": null,
+          "notes": "TIKKA",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Malai Chicken",
+          "description": null,
+          "price": 19,
+          "variants": null,
+          "notes": "TIKKA",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Chicken Tikka",
+          "description": null,
+          "price": 20,
+          "variants": null,
+          "notes": "TIKKA",
+          "ambiguous": true,
+          "ambiguity_note": "Read as 20 (slashed zero); OCR repeatedly returned 28. Verify against print."
+        },
+        {
+          "name": "Hariyali Chicken Tikka",
+          "description": null,
+          "price": 20,
+          "variants": null,
+          "notes": "TIKKA",
+          "ambiguous": true,
+          "ambiguity_note": "Read as 20 (slashed zero); OCR repeatedly returned 28. Verify against print."
+        },
+        {
+          "name": "Achari Chicken",
+          "description": null,
+          "price": 22,
+          "variants": null,
+          "notes": "TIKKA",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Charred Atlantic Salmon",
+          "description": null,
+          "price": 26,
+          "variants": null,
+          "notes": "TIKKA",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Chicken [Bone-In]",
+          "description": "Meat Cooked Spicy & Flavorfuls with a Slightly Smoky Taste",
+          "price": null,
+          "variants": [
+            {"label": "Half Plate", "price": 14},
+            {"label": "Full Plate", "price": 24}
+          ],
+          "notes": "TANDOORI",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Noorani Shrimp",
+          "description": null,
+          "price": 22,
+          "variants": null,
+          "notes": "TANDOORI",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Lamb Chop",
+          "description": null,
+          "price": 32,
+          "variants": null,
+          "notes": "TANDOORI",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "7-Spices Mix Grill",
+          "description": "Paneer & Chicken Tikka, Tandoori Chicken, Chicken Kebab, Lamb, Shrimp & Salmon",
+          "price": 34,
+          "variants": null,
+          "notes": "TANDOORI",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "SEEKH KEBAB",
+          "description": "Anglo-Indian Cuisine Consisting of a Mixture of Minced Meat, Garlic & Spices Thinly Wrapped around Skewer & Cooked in Tandoor",
+          "price": null,
+          "variants": [
+            {"label": "Chicken Reshmi", "price": 20},
+            {"label": "Lamb", "price": 22}
+          ],
+          "notes": null,
+          "ambiguous": true,
+          "ambiguity_note": "Chicken Reshmi read as 20 (slashed zero); OCR repeatedly returned 28. Verify against print."
+        }
+      ]
+    },
+    {
+      "name": "Naan",
+      "notes": "Specialty naans (page 2); distinct from Bread section on page 4",
+      "items": [
+        {
+          "name": "Chili Cheese",
+          "description": "Amul Indian Cheese and Jalapeno",
+          "price": 8,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Truffle",
+          "description": "Truffle Oil, Parmesan Cheese & Mushroom",
+          "price": 10,
+          "variants": null,
+          "notes": null,
+          "ambiguous": true,
+          "ambiguity_note": "Read as 10 (slashed zero); OCR often returned 18. Verify against print."
+        },
+        {
+          "name": "Peshawari",
+          "description": "Preserved Rose Petal Paste, Coconut, Raisins, Sesame Seeds, Cashew & Almond",
+          "price": 9,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Kids",
+      "items": [
+        {
+          "name": "Chicken Nuggest with Fries",
+          "description": null,
+          "price": 8,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Small Cheese Naan",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Messy Fries Topped with Gravy",
+          "description": null,
+          "price": 10,
+          "variants": [
+            {"label": "Chicken", "price": 10},
+            {"label": "Paneer", "price": 10}
+          ],
+          "notes": "[Chicken or Paneer]; All Kids meals come with Kids Drink",
+          "ambiguous": true,
+          "ambiguity_note": "Read as 10 (slashed zero); OCR often returned 18. Verify against print."
+        }
+      ]
+    },
+    {
+      "name": "Curry",
+      "description": "Creamy Gravy Dish With a Choice of Protein. Plain Rice Included",
+      "protein_prices": [
+        {"label": "Paneer", "price": 17},
+        {"label": "Chicken", "price": 19},
+        {"label": "Fish", "price": 20},
+        {"label": "Shrimp", "price": 21},
+        {"label": "Lamb", "price": 24},
+        {"label": "Salmon", "price": 26},
+        {"label": "Crab Kofta", "price": 26}
+      ],
+      "items": [
+        {
+          "name": "GOAN",
+          "description": "Coconut & Curry Leaves",
+          "price": null,
+          "variants": null,
+          "notes": "[RECOMMENDED WITH SEAFOOD]",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "KORMA",
+          "description": "Cashew Creamy Gravy",
+          "price": null,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "TIKKA MASALA",
+          "description": "Tomatoes, Onion & Fenugreek",
+          "price": null,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "MADRAS CURRY",
+          "description": "Coconut based gravy with South Indian Spices",
+          "price": null,
+          "variants": null,
+          "notes": "[NO SEAFOOD OR PANEER]",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "SAAG",
+          "description": "Pureed Fresh Spinach & Mustard with Cream",
+          "price": null,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "KARAHI",
+          "description": "Sauteed Onions, Tomatoes & Bell Pepper",
+          "price": null,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "VINDALOO",
+          "description": "Spicy Whole Red Chili & Potatoes",
+          "price": null,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "MALKHANI",
+          "description": "Tomatoes, Butter & Onions",
+          "price": null,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Only Chicken Curry",
+      "notes": "Plain Rice Included",
+      "items": [
+        {
+          "name": "KALI MIRCH",
+          "description": "White Gravy With Blackpepper",
+          "price": 19,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "METHI MURG",
+          "description": "Assorted Spices, Cream & Fenugreek Leafs",
+          "price": 19,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "CHEFS SPECIAL",
+          "description": "Pureed Fresh Spinach & Mustard with Cream",
+          "price": 22,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "PAHADI TANDOORI",
+          "description": "Roasted Bone-In Chicken with Onions & Tomato Gravy",
+          "price": 24,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Vegetarian",
+      "notes": "Plain Rice Included",
+      "items": [
+        {
+          "name": "BHINDI DO PYAZA",
+          "description": "Fried Okra & Onions in Tangy Gravy",
+          "price": 16,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "ALOO GOBI",
+          "description": "Potato, Califlower & Onions",
+          "price": 16,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "BANGAN BARTHA",
+          "description": "Grilled Eggplants Pureed with Tomato, Onion & Spices",
+          "price": 16,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "VEG KOLHAPURI",
+          "description": "Mixed Vegetables Stir-Fry with Paneer",
+          "price": 16,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "MATTAR PANEER",
+          "description": "Paneer & Peas cooked in Tomato-based",
+          "price": 17,
+          "variants": null,
+          "notes": null,
+          "ambiguous": true,
+          "ambiguity_note": "Description appears truncated on the print (ends at 'Tomato-based'); may continue with 'gravy' or similar. Price 17 is clear."
+        },
+        {
+          "name": "PANJABI PANEER BURJI",
+          "description": "Grated Paneer with Onion, Ginger & Tomato",
+          "price": 19,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "KAJU CURRY",
+          "description": "White Gravy With Blackpepper",
+          "price": 19,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "MUSHROOM MASALA GRAVY",
+          "description": "White Gravy With Blackpepper",
+          "price": 18,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "METHI MALAI MATAR",
+          "description": "Fenugreek & Peas with house spice blend",
+          "price": 18,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "MALAI KOFTA",
+          "description": "Fried Veggie Corquettes served in Cashew Gravy",
+          "price": 18,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Dal [Lentil & Bean]",
+      "notes": "Plain Rice Included",
+      "items": [
+        {
+          "name": "DAL TARKA",
+          "description": "Lentil Stew made with Moong & Toor Dal",
+          "price": 15,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "CHANNA MASALA",
+          "description": "Chickpea cooked in warming Spices",
+          "price": 15,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "PANJABI RAJMA",
+          "description": "Red Kidney Beans cooked in thick gravy",
+          "price": 16,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "DAL MAKHANI",
+          "description": "Urad Dal and Rajma Slowly cooked in gravy",
+          "price": 16,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Bread",
+      "items": [
+        {
+          "name": "NAAN",
+          "description": null,
+          "price": null,
+          "variants": [
+            {"label": "Plain or Buttered", "price": 4},
+            {"label": "Garlic", "price": 5},
+            {"label": "Chili", "price": 5},
+            {"label": "Garlic & Chili", "price": 5},
+            {"label": "Cheese", "price": 6},
+            {"label": "Mix Basket [Garlic/Chili/Cheese]", "price": 15}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "STUFFED KULCHA",
+          "description": null,
+          "price": null,
+          "variants": [
+            {"label": "Onion", "price": 7},
+            {"label": "Paneer", "price": 8},
+            {"label": "Amritsari", "price": 10}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "WHOLE WHEAT",
+          "description": null,
+          "price": null,
+          "variants": [
+            {"label": "Roti", "price": 4},
+            {"label": "Aloo Parontha", "price": 6},
+            {"label": "Lacha Parontha", "price": 5}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Sides",
+      "items": [
+        {
+          "name": "Tandoori Veggies",
+          "description": null,
+          "price": 8,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Bombay Aloo",
+          "description": null,
+          "price": 8,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Papad",
+          "description": null,
+          "price": 4,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Plain Yogurt",
+          "description": null,
+          "price": 4,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Raita",
+          "description": null,
+          "price": 5,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Masala Onion",
+          "description": null,
+          "price": 3,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Pickles [Achar]",
+          "description": null,
+          "price": 4,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Jeera Rice",
+          "description": null,
+          "price": 8,
+          "variants": null,
+          "notes": null,
+          "ambiguous": true,
+          "ambiguity_note": "Read as 8 from print; low-confidence OCR sometimes returned 6. Verify against print."
+        },
+        {
+          "name": "Veg Pulav",
+          "description": null,
+          "price": 12,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Plain Rice",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Lamb & Goat",
+      "notes": "Plain Rice Included",
+      "items": [
+        {
+          "name": "LAMB CURRY",
+          "description": "Meat Cooked in Homestyle Gravy",
+          "price": 24,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "LAMB CHETTINAD",
+          "description": "South-Indian Spicy Curry Cooked with Coconut, Mustard and Curry Leaves",
+          "price": 24,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "LAMB ROGAN JOSH",
+          "description": "Kashmiri Curry with blend of Star Anise, Cloves and Mace",
+          "price": 24,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "GOAT CURRY",
+          "description": "Meat cooked in Homestyle Gravy",
+          "price": 24,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "SUKHA GOAT",
+          "description": "Cooked with Onion, Curry leaves & Chili",
+          "price": 24,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "LAL MAS (GOAT RED MEAT)",
+          "description": "Rajasthani Curry prepared in sauce of Yogurt and Hot Spices",
+          "price": 24,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "LAMB CHOMP CURRY",
+          "description": "Homestyle Gravy with Curry Leaves & Potatoes",
+          "price": 28,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Biryani",
+      "items": [
+        {
+          "name": "BIRYANI",
+          "description": "Flavorful dish layed with Rice, Indian Spices, Fresh Herbs & Protein. Assembled in a Clay Pot, Sealed with Dough & Cooked for hours over Low-Flame to marinate all the flavors.",
+          "price": null,
+          "variants": [
+            {"label": "Veg", "price": 16},
+            {"label": "Chicken", "price": 20},
+            {"label": "Shrimp", "price": 22},
+            {"label": "Lamb", "price": 24},
+            {"label": "Goat", "price": 24}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Indo-Chinese",
+      "notes": "No Sides Include",
+      "items": [
+        {
+          "name": "CHILI",
+          "description": "Crispy Battered Fried Protein Tossed in Sweet, Spicy & Tangy Chili Sauce",
+          "price": null,
+          "variants": [
+            {"label": "Paneer", "price": 13},
+            {"label": "Chicken", "price": 14},
+            {"label": "Prawns", "price": 16}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "65",
+          "description": "Deep Fried Protein Tossed in Spicy Sauce blended with Spices, Garlic, Peppers & Yogurt",
+          "price": null,
+          "variants": [
+            {"label": "Gobi", "price": 12},
+            {"label": "Paneer", "price": 13},
+            {"label": "Chicken", "price": 14}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "MANCHURIAN",
+          "description": "Fried Veggies or Protein pieces in Spicy, Sweet & Tangy Sauce",
+          "price": null,
+          "variants": [
+            {"label": "Crisp Baby Corn", "price": 12},
+            {"label": "Veg", "price": 12},
+            {"label": "Paneer", "price": 13},
+            {"label": "Chicken", "price": 14}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "FRIED RICE",
+          "description": "Rice fried with in-house Blended Spices and Protein",
+          "price": null,
+          "variants": [
+            {"label": "Veg", "price": 15},
+            {"label": "Paneer", "price": 16},
+            {"label": "Chicken", "price": 18},
+            {"label": "Shrimp", "price": 20}
+          ],
+          "notes": null,
+          "ambiguous": true,
+          "ambiguity_note": "Shrimp read as 20 (slashed zero); OCR returned 280. Verify against print."
+        },
+        {
+          "name": "HAKKA NOODLES",
+          "description": "Noodles Stir-fried in House Special Sauce & Spices with choice of Protein",
+          "price": null,
+          "variants": [
+            {"label": "Veg", "price": 15},
+            {"label": "Chili Paneer", "price": 17},
+            {"label": "Chicken", "price": 18}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Chaa or Coffee",
+      "items": [
+        {
+          "name": "Masala Chaa",
+          "description": "Indian Black Tea made with Ginger, Cardamom & Whole Milk",
+          "price": 4,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Cardamom Coffee",
+          "description": "Filtered Indian coffee with whole milk & cardamom powder",
+          "price": 5,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Ice Chaa",
+          "description": "Black Tea infused with Cinnamon, Cloves & Warming Spices Combined with Whole Milk over Ice.",
+          "price": 5,
+          "variants": null,
+          "notes": null,
+          "ambiguous": true,
+          "ambiguity_note": "Read as 5 from print; OCR sometimes returned 9. Verify against print."
+        }
+      ]
+    },
+    {
+      "name": "Lassi",
+      "notes": "Under Non-Alcoholic header",
+      "items": [
+        {
+          "name": "LASSI",
+          "description": "A creamy yogurt-based dink, blended with various fruits or seasonings, originated in Punjab, India",
+          "price": null,
+          "variants": [
+            {"label": "Sweet", "price": 4},
+            {"label": "Salty", "price": 4},
+            {"label": "Mango", "price": 5},
+            {"label": "Dry Fruit", "price": 8}
+          ],
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Soda",
+      "items": [
+        {
+          "name": "Soda",
+          "description": null,
+          "price": 4,
+          "variants": [
+            {"label": "Sweet Tea", "price": 4},
+            {"label": "Unsweet Tea", "price": 4},
+            {"label": "Coke", "price": 4},
+            {"label": "Diet Coke", "price": 4},
+            {"label": "Coke Zero", "price": 4},
+            {"label": "Sprite", "price": 4},
+            {"label": "Lemonade", "price": 4}
+          ],
+          "notes": "Single listed price applies to all listed sodas",
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Indian Soda",
+      "items": [
+        {
+          "name": "Indian Soda",
+          "description": null,
+          "price": 5,
+          "variants": [
+            {"label": "Thumbs Up", "price": 5},
+            {"label": "Limca", "price": 5}
+          ],
+          "notes": "Price aligned with INDIAN SODA header; applies to both options",
+          "ambiguous": true,
+          "ambiguity_note": "Price 5 appears on the category header line rather than beside each soda. Confirm both are $5."
+        }
+      ]
+    },
+    {
+      "name": "Beer",
+      "items": [
+        {
+          "name": "Michelob",
+          "description": null,
+          "price": 5,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Budwiser",
+          "description": null,
+          "price": 5,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Corona",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Heineken",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Stella Artois",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Yuengling",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Dos Equis",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Creature Comforts Tropcalia",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Draft Beer",
+          "description": null,
+          "price": null,
+          "variants": [
+            {"label": "12oz", "price": 5},
+            {"label": "26oz", "price": 10}
+          ],
+          "notes": null,
+          "ambiguous": true,
+          "ambiguity_note": "26oz read as 10 (possible slashed zero); OCR returned 18 with moderate-high confidence. Verify against print."
+        }
+      ]
+    },
+    {
+      "name": "Indian Beer",
+      "items": [
+        {
+          "name": "Rupee",
+          "description": null,
+          "price": 9,
+          "variants": null,
+          "notes": "16 OZ",
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Taj Mahal",
+          "description": null,
+          "price": 12,
+          "variants": null,
+          "notes": "22 OZ",
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    },
+    {
+      "name": "Mimosa",
+      "items": [
+        {
+          "name": "MIMOSA",
+          "description": "Prepared with La Marca Prosecco. OJ & Splash of Pomegranate Juice",
+          "price": 10,
+          "variants": null,
+          "notes": null,
+          "ambiguous": true,
+          "ambiguity_note": "Read as 10 (possible slashed zero); OCR returned 18. Cocktail pricing may favor 18 — verify against print."
+        }
+      ]
+    },
+    {
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Gulab Jamun [2 pc]",
+          "description": null,
+          "price": 5,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Gulab Jamun & Vanilla Ice Cream",
+          "description": null,
+          "price": 7,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Ras Malai [2 pc]",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Gajrela",
+          "description": null,
+          "price": 6,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Panjabi Kheer",
+          "description": null,
+          "price": 7,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        },
+        {
+          "name": "Vanilla Ice Cream",
+          "description": null,
+          "price": 3,
+          "variants": null,
+          "notes": null,
+          "ambiguous": false,
+          "ambiguity_note": null
+        }
+      ]
+    }
+  ],
+  "ambiguous_items": [
+    {
+      "category": "Appetizers",
+      "name": "HARA BHARA KABAB",
+      "field": "price",
+      "recorded_value": 10,
+      "note": "OCR often read 16/18; treated as slashed-zero 10"
+    },
+    {
+      "category": "Tandoor",
+      "name": "Chicken Tikka",
+      "field": "price",
+      "recorded_value": 20,
+      "note": "OCR repeatedly read 28; treated as slashed-zero 20"
+    },
+    {
+      "category": "Tandoor",
+      "name": "Hariyali Chicken Tikka",
+      "field": "price",
+      "recorded_value": 20,
+      "note": "OCR repeatedly read 28; treated as slashed-zero 20"
+    },
+    {
+      "category": "Tandoor",
+      "name": "SEEKH KEBAB / Chicken Reshmi",
+      "field": "variants.Chicken Reshmi.price",
+      "recorded_value": 20,
+      "note": "OCR repeatedly read 28; treated as slashed-zero 20"
+    },
+    {
+      "category": "Naan",
+      "name": "Truffle",
+      "field": "price",
+      "recorded_value": 10,
+      "note": "OCR often read 18; treated as slashed-zero 10"
+    },
+    {
+      "category": "Kids",
+      "name": "Messy Fries Topped with Gravy",
+      "field": "price",
+      "recorded_value": 10,
+      "note": "OCR often read 18; treated as slashed-zero 10"
+    },
+    {
+      "category": "Vegetarian",
+      "name": "MATTAR PANEER",
+      "field": "description",
+      "recorded_value": "Paneer & Peas cooked in Tomato-based",
+      "note": "Description appears truncated on the printed page"
+    },
+    {
+      "category": "Sides",
+      "name": "Jeera Rice",
+      "field": "price",
+      "recorded_value": 8,
+      "note": "Low-confidence OCR sometimes returned 6"
+    },
+    {
+      "category": "Indo-Chinese",
+      "name": "FRIED RICE / Shrimp",
+      "field": "variants.Shrimp.price",
+      "recorded_value": 20,
+      "note": "OCR returned 280; treated as slashed-zero 20"
+    },
+    {
+      "category": "Chaa or Coffee",
+      "name": "Ice Chaa",
+      "field": "price",
+      "recorded_value": 5,
+      "note": "OCR sometimes returned 9"
+    },
+    {
+      "category": "Indian Soda",
+      "name": "Indian Soda",
+      "field": "price",
+      "recorded_value": 5,
+      "note": "Price sits on header line; confirm applies to Thumbs Up and Limca"
+    },
+    {
+      "category": "Beer",
+      "name": "Draft Beer / 26oz",
+      "field": "variants.26oz.price",
+      "recorded_value": 10,
+      "note": "OCR returned 18 with moderate-high confidence; possible slashed-zero 10"
+    },
+    {
+      "category": "Mimosa",
+      "name": "MIMOSA",
+      "field": "price",
+      "recorded_value": 10,
+      "note": "OCR returned 18; cocktail pricing may favor 18 — highest-priority verify"
+    }
+  ]
+}
