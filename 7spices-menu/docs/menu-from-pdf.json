@@ -20,8 +20,8 @@
           "price": 10,
           "variants": null,
           "notes": null,
-          "ambiguous": true,
-          "ambiguity_note": "Price read as 10 (likely slashed zero); OCR frequently returned 16 or 18. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 10 on page 2 image | Price read as 10 (likely slashed zero); OCR frequently returned 16 or 18. Verify against print."
         },
         {
           "name": "CHILI MANGO SHRIMP",
@@ -55,9 +55,18 @@
           "description": "Crispy deep-fried with flavorable spices",
           "price": null,
           "variants": [
-            {"label": "Veggie", "price": 8},
-            {"label": "Chicken", "price": 11},
-            {"label": "Lamb", "price": 12}
+            {
+              "label": "Veggie",
+              "price": 8
+            },
+            {
+              "label": "Chicken",
+              "price": 11
+            },
+            {
+              "label": "Lamb",
+              "price": 12
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -68,9 +77,18 @@
           "description": "Fritters from Indian Subcontinent",
           "price": null,
           "variants": [
-            {"label": "Paneer", "price": 9},
-            {"label": "Mirch", "price": 9},
-            {"label": "Mix Veggie", "price": 12}
+            {
+              "label": "Paneer",
+              "price": 9
+            },
+            {
+              "label": "Mirch",
+              "price": 9
+            },
+            {
+              "label": "Mix Veggie",
+              "price": 12
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -86,8 +104,14 @@
           "description": "Creamy, curry-flavored soup that originate in Southern India made with lentils, pineapples & vegitables.",
           "price": null,
           "variants": [
-            {"label": "Veggie", "price": 6},
-            {"label": "Chicken", "price": 9}
+            {
+              "label": "Veggie",
+              "price": 6
+            },
+            {
+              "label": "Chicken",
+              "price": 9
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -98,8 +122,14 @@
           "description": "Indo-Chinese style soup with hot& spicy flavor",
           "price": null,
           "variants": [
-            {"label": "Veggie", "price": 6},
-            {"label": "Chicken", "price": 9}
+            {
+              "label": "Veggie",
+              "price": 6
+            },
+            {
+              "label": "Chicken",
+              "price": 9
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -153,8 +183,8 @@
           "price": 20,
           "variants": null,
           "notes": "TIKKA",
-          "ambiguous": true,
-          "ambiguity_note": "Read as 20 (slashed zero); OCR repeatedly returned 28. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 20 on page 2 image | Read as 20 (slashed zero); OCR repeatedly returned 28. Verify against print."
         },
         {
           "name": "Hariyali Chicken Tikka",
@@ -162,8 +192,8 @@
           "price": 20,
           "variants": null,
           "notes": "TIKKA",
-          "ambiguous": true,
-          "ambiguity_note": "Read as 20 (slashed zero); OCR repeatedly returned 28. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 20 on page 2 image | Read as 20 (slashed zero); OCR repeatedly returned 28. Verify against print."
         },
         {
           "name": "Achari Chicken",
@@ -188,8 +218,14 @@
           "description": "Meat Cooked Spicy & Flavorfuls with a Slightly Smoky Taste",
           "price": null,
           "variants": [
-            {"label": "Half Plate", "price": 14},
-            {"label": "Full Plate", "price": 24}
+            {
+              "label": "Half Plate",
+              "price": 14
+            },
+            {
+              "label": "Full Plate",
+              "price": 24
+            }
           ],
           "notes": "TANDOORI",
           "ambiguous": false,
@@ -227,12 +263,18 @@
           "description": "Anglo-Indian Cuisine Consisting of a Mixture of Minced Meat, Garlic & Spices Thinly Wrapped around Skewer & Cooked in Tandoor",
           "price": null,
           "variants": [
-            {"label": "Chicken Reshmi", "price": 20},
-            {"label": "Lamb", "price": 22}
+            {
+              "label": "Chicken Reshmi",
+              "price": 20
+            },
+            {
+              "label": "Lamb",
+              "price": 22
+            }
           ],
           "notes": null,
-          "ambiguous": true,
-          "ambiguity_note": "Chicken Reshmi read as 20 (slashed zero); OCR repeatedly returned 28. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed Chicken Reshmi 20 on page 2 image | Chicken Reshmi read as 20 (slashed zero); OCR repeatedly returned 28. Verify against print."
         }
       ]
     },
@@ -255,8 +297,8 @@
           "price": 10,
           "variants": null,
           "notes": null,
-          "ambiguous": true,
-          "ambiguity_note": "Read as 10 (slashed zero); OCR often returned 18. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 10 on page 2 image | Read as 10 (slashed zero); OCR often returned 18. Verify against print."
         },
         {
           "name": "Peshawari",
@@ -295,12 +337,18 @@
           "description": null,
           "price": 10,
           "variants": [
-            {"label": "Chicken", "price": 10},
-            {"label": "Paneer", "price": 10}
+            {
+              "label": "Chicken",
+              "price": 10
+            },
+            {
+              "label": "Paneer",
+              "price": 10
+            }
           ],
           "notes": "[Chicken or Paneer]; All Kids meals come with Kids Drink",
-          "ambiguous": true,
-          "ambiguity_note": "Read as 10 (slashed zero); OCR often returned 18. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 10 on page 2 image | Read as 10 (slashed zero); OCR often returned 18. Verify against print."
         }
       ]
     },
@@ -308,13 +356,34 @@
       "name": "Curry",
       "description": "Creamy Gravy Dish With a Choice of Protein. Plain Rice Included",
       "protein_prices": [
-        {"label": "Paneer", "price": 17},
-        {"label": "Chicken", "price": 19},
-        {"label": "Fish", "price": 20},
-        {"label": "Shrimp", "price": 21},
-        {"label": "Lamb", "price": 24},
-        {"label": "Salmon", "price": 26},
-        {"label": "Crab Kofta", "price": 26}
+        {
+          "label": "Paneer",
+          "price": 17
+        },
+        {
+          "label": "Chicken",
+          "price": 19
+        },
+        {
+          "label": "Fish",
+          "price": 20
+        },
+        {
+          "label": "Shrimp",
+          "price": 21
+        },
+        {
+          "label": "Lamb",
+          "price": 24
+        },
+        {
+          "label": "Salmon",
+          "price": 26
+        },
+        {
+          "label": "Crab Kofta",
+          "price": 26
+        }
       ],
       "items": [
         {
@@ -579,12 +648,30 @@
           "description": null,
           "price": null,
           "variants": [
-            {"label": "Plain or Buttered", "price": 4},
-            {"label": "Garlic", "price": 5},
-            {"label": "Chili", "price": 5},
-            {"label": "Garlic & Chili", "price": 5},
-            {"label": "Cheese", "price": 6},
-            {"label": "Mix Basket [Garlic/Chili/Cheese]", "price": 15}
+            {
+              "label": "Plain or Buttered",
+              "price": 4
+            },
+            {
+              "label": "Garlic",
+              "price": 5
+            },
+            {
+              "label": "Chili",
+              "price": 5
+            },
+            {
+              "label": "Garlic & Chili",
+              "price": 5
+            },
+            {
+              "label": "Cheese",
+              "price": 6
+            },
+            {
+              "label": "Mix Basket [Garlic/Chili/Cheese]",
+              "price": 15
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -595,9 +682,18 @@
           "description": null,
           "price": null,
           "variants": [
-            {"label": "Onion", "price": 7},
-            {"label": "Paneer", "price": 8},
-            {"label": "Amritsari", "price": 10}
+            {
+              "label": "Onion",
+              "price": 7
+            },
+            {
+              "label": "Paneer",
+              "price": 8
+            },
+            {
+              "label": "Amritsari",
+              "price": 10
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -608,9 +704,18 @@
           "description": null,
           "price": null,
           "variants": [
-            {"label": "Roti", "price": 4},
-            {"label": "Aloo Parontha", "price": 6},
-            {"label": "Lacha Parontha", "price": 5}
+            {
+              "label": "Roti",
+              "price": 4
+            },
+            {
+              "label": "Aloo Parontha",
+              "price": 6
+            },
+            {
+              "label": "Lacha Parontha",
+              "price": 5
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -690,8 +795,8 @@
           "price": 8,
           "variants": null,
           "notes": null,
-          "ambiguous": true,
-          "ambiguity_note": "Read as 8 from print; low-confidence OCR sometimes returned 6. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 8 on page 4 image | Read as 8 from print; low-confidence OCR sometimes returned 6. Verify against print."
         },
         {
           "name": "Veg Pulav",
@@ -790,11 +895,26 @@
           "description": "Flavorful dish layed with Rice, Indian Spices, Fresh Herbs & Protein. Assembled in a Clay Pot, Sealed with Dough & Cooked for hours over Low-Flame to marinate all the flavors.",
           "price": null,
           "variants": [
-            {"label": "Veg", "price": 16},
-            {"label": "Chicken", "price": 20},
-            {"label": "Shrimp", "price": 22},
-            {"label": "Lamb", "price": 24},
-            {"label": "Goat", "price": 24}
+            {
+              "label": "Veg",
+              "price": 16
+            },
+            {
+              "label": "Chicken",
+              "price": 20
+            },
+            {
+              "label": "Shrimp",
+              "price": 22
+            },
+            {
+              "label": "Lamb",
+              "price": 24
+            },
+            {
+              "label": "Goat",
+              "price": 24
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -811,9 +931,18 @@
           "description": "Crispy Battered Fried Protein Tossed in Sweet, Spicy & Tangy Chili Sauce",
           "price": null,
           "variants": [
-            {"label": "Paneer", "price": 13},
-            {"label": "Chicken", "price": 14},
-            {"label": "Prawns", "price": 16}
+            {
+              "label": "Paneer",
+              "price": 13
+            },
+            {
+              "label": "Chicken",
+              "price": 14
+            },
+            {
+              "label": "Prawns",
+              "price": 16
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -824,9 +953,18 @@
           "description": "Deep Fried Protein Tossed in Spicy Sauce blended with Spices, Garlic, Peppers & Yogurt",
           "price": null,
           "variants": [
-            {"label": "Gobi", "price": 12},
-            {"label": "Paneer", "price": 13},
-            {"label": "Chicken", "price": 14}
+            {
+              "label": "Gobi",
+              "price": 12
+            },
+            {
+              "label": "Paneer",
+              "price": 13
+            },
+            {
+              "label": "Chicken",
+              "price": 14
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -837,10 +975,22 @@
           "description": "Fried Veggies or Protein pieces in Spicy, Sweet & Tangy Sauce",
           "price": null,
           "variants": [
-            {"label": "Crisp Baby Corn", "price": 12},
-            {"label": "Veg", "price": 12},
-            {"label": "Paneer", "price": 13},
-            {"label": "Chicken", "price": 14}
+            {
+              "label": "Crisp Baby Corn",
+              "price": 12
+            },
+            {
+              "label": "Veg",
+              "price": 12
+            },
+            {
+              "label": "Paneer",
+              "price": 13
+            },
+            {
+              "label": "Chicken",
+              "price": 14
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -851,23 +1001,44 @@
           "description": "Rice fried with in-house Blended Spices and Protein",
           "price": null,
           "variants": [
-            {"label": "Veg", "price": 15},
-            {"label": "Paneer", "price": 16},
-            {"label": "Chicken", "price": 18},
-            {"label": "Shrimp", "price": 20}
+            {
+              "label": "Veg",
+              "price": 15
+            },
+            {
+              "label": "Paneer",
+              "price": 16
+            },
+            {
+              "label": "Chicken",
+              "price": 18
+            },
+            {
+              "label": "Shrimp",
+              "price": 20
+            }
           ],
           "notes": null,
-          "ambiguous": true,
-          "ambiguity_note": "Shrimp read as 20 (slashed zero); OCR returned 280. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed Shrimp 20 on page 4 image | Shrimp read as 20 (slashed zero); OCR returned 280. Verify against print."
         },
         {
           "name": "HAKKA NOODLES",
           "description": "Noodles Stir-fried in House Special Sauce & Spices with choice of Protein",
           "price": null,
           "variants": [
-            {"label": "Veg", "price": 15},
-            {"label": "Chili Paneer", "price": 17},
-            {"label": "Chicken", "price": 18}
+            {
+              "label": "Veg",
+              "price": 15
+            },
+            {
+              "label": "Chili Paneer",
+              "price": 17
+            },
+            {
+              "label": "Chicken",
+              "price": 18
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -902,8 +1073,8 @@
           "price": 5,
           "variants": null,
           "notes": null,
-          "ambiguous": true,
-          "ambiguity_note": "Read as 5 from print; OCR sometimes returned 9. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 5 on page 5 image | Read as 5 from print; OCR sometimes returned 9. Verify against print."
         }
       ]
     },
@@ -916,10 +1087,22 @@
           "description": "A creamy yogurt-based dink, blended with various fruits or seasonings, originated in Punjab, India",
           "price": null,
           "variants": [
-            {"label": "Sweet", "price": 4},
-            {"label": "Salty", "price": 4},
-            {"label": "Mango", "price": 5},
-            {"label": "Dry Fruit", "price": 8}
+            {
+              "label": "Sweet",
+              "price": 4
+            },
+            {
+              "label": "Salty",
+              "price": 4
+            },
+            {
+              "label": "Mango",
+              "price": 5
+            },
+            {
+              "label": "Dry Fruit",
+              "price": 8
+            }
           ],
           "notes": null,
           "ambiguous": false,
@@ -935,13 +1118,34 @@
           "description": null,
           "price": 4,
           "variants": [
-            {"label": "Sweet Tea", "price": 4},
-            {"label": "Unsweet Tea", "price": 4},
-            {"label": "Coke", "price": 4},
-            {"label": "Diet Coke", "price": 4},
-            {"label": "Coke Zero", "price": 4},
-            {"label": "Sprite", "price": 4},
-            {"label": "Lemonade", "price": 4}
+            {
+              "label": "Sweet Tea",
+              "price": 4
+            },
+            {
+              "label": "Unsweet Tea",
+              "price": 4
+            },
+            {
+              "label": "Coke",
+              "price": 4
+            },
+            {
+              "label": "Diet Coke",
+              "price": 4
+            },
+            {
+              "label": "Coke Zero",
+              "price": 4
+            },
+            {
+              "label": "Sprite",
+              "price": 4
+            },
+            {
+              "label": "Lemonade",
+              "price": 4
+            }
           ],
           "notes": "Single listed price applies to all listed sodas",
           "ambiguous": false,
@@ -957,12 +1161,18 @@
           "description": null,
           "price": 5,
           "variants": [
-            {"label": "Thumbs Up", "price": 5},
-            {"label": "Limca", "price": 5}
+            {
+              "label": "Thumbs Up",
+              "price": 5
+            },
+            {
+              "label": "Limca",
+              "price": 5
+            }
           ],
           "notes": "Price aligned with INDIAN SODA header; applies to both options",
-          "ambiguous": true,
-          "ambiguity_note": "Price 5 appears on the category header line rather than beside each soda. Confirm both are $5."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 5 on page 5 image | Price 5 appears on the category header line rather than beside each soda. Confirm both are $5."
         }
       ]
     },
@@ -1046,12 +1256,18 @@
           "description": null,
           "price": null,
           "variants": [
-            {"label": "12oz", "price": 5},
-            {"label": "26oz", "price": 10}
+            {
+              "label": "12oz",
+              "price": 5
+            },
+            {
+              "label": "26oz",
+              "price": 10
+            }
           ],
           "notes": null,
-          "ambiguous": true,
-          "ambiguity_note": "26oz read as 10 (possible slashed zero); OCR returned 18 with moderate-high confidence. Verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 26oz 10 on page 5 image | 26oz read as 10 (possible slashed zero); OCR returned 18 with moderate-high confidence. Verify against print."
         }
       ]
     },
@@ -1087,8 +1303,8 @@
           "price": 10,
           "variants": null,
           "notes": null,
-          "ambiguous": true,
-          "ambiguity_note": "Read as 10 (possible slashed zero); OCR returned 18. Cocktail pricing may favor 18 — verify against print."
+          "ambiguous": false,
+          "ambiguity_note": "IMAGE-CONFIRMED: Confirmed 10 on page 5 image | Read as 10 (possible slashed zero); OCR returned 18. Cocktail pricing may favor 18 \u2014 verify against print."
         }
       ]
     },
@@ -1242,7 +1458,7 @@
       "name": "MIMOSA",
       "field": "price",
       "recorded_value": 10,
-      "note": "OCR returned 18; cocktail pricing may favor 18 — highest-priority verify"
+      "note": "OCR returned 18; cocktail pricing may favor 18 \u2014 highest-priority verify"
     }
   ]
 }
