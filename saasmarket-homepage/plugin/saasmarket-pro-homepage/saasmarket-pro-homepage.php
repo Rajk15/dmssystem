@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SaaSMarket Pro Homepage
  * Description: Premium SaaS marketplace homepage for SaaSMarket Pro. Replaces the front page presentation while preserving existing shop, account, and contact routes. Does not invent software products.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: SaaSMarket Pro
  * Text Domain: saasmarket-pro-homepage
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SMP_HOME_VERSION', '1.0.0' );
+define( 'SMP_HOME_VERSION', '1.0.1' );
 define( 'SMP_HOME_FILE', __FILE__ );
 define( 'SMP_HOME_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SMP_HOME_URL', plugin_dir_url( __FILE__ ) );
@@ -22,19 +22,28 @@ define( 'SMP_HOME_URL', plugin_dir_url( __FILE__ ) );
  * @return array<string,string>
  */
 function smp_home_urls() {
-	$shop     = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/index.php/shop/' );
-	$account  = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/index.php/my-account/' );
-	$contact  = home_url( '/index.php/pages/contact-us/' );
-	$about    = home_url( '/index.php/pages/about-us/' );
-	$services = home_url( '/index.php/pages/our-services/' );
+	$shop = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : '';
+	if ( ! $shop ) {
+		$shop = home_url( '/index.php/shop/' );
+	}
+
+	// Prefer the primary My Account page slug when duplicates exist on staging.
+	$account_page = get_page_by_path( 'my-account' );
+	if ( $account_page ) {
+		$account = get_permalink( $account_page );
+	} elseif ( function_exists( 'wc_get_page_permalink' ) ) {
+		$account = wc_get_page_permalink( 'myaccount' );
+	} else {
+		$account = home_url( '/index.php/my-account/' );
+	}
 
 	return array(
 		'home'     => home_url( '/' ),
-		'shop'     => $shop ? $shop : home_url( '/index.php/shop/' ),
+		'shop'     => $shop,
 		'account'  => $account ? $account : home_url( '/index.php/my-account/' ),
-		'contact'  => $contact,
-		'about'    => $about,
-		'services' => $services,
+		'contact'  => home_url( '/index.php/pages/contact-us/' ),
+		'about'    => home_url( '/index.php/pages/about-us/' ),
+		'services' => home_url( '/index.php/pages/our-services/' ),
 		'login'    => wp_login_url(),
 	);
 }
