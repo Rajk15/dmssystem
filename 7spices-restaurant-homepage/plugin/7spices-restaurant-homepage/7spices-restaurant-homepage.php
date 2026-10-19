@@ -2,7 +2,7 @@
 /**
  * Plugin Name: 7 Spices Restaurant Homepage
  * Description: Premium restaurant-style homepage for 7 Spices. Uses existing WooCommerce menu categories and dishes. Replaces the front page only.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: 7 Spices
  * Requires Plugins: woocommerce
  * Text Domain: 7spices-restaurant-homepage
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SEVENSPICES_HOME_VERSION', '1.0.0' );
+define( 'SEVENSPICES_HOME_VERSION', '1.0.1' );
 define( 'SEVENSPICES_HOME_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SEVENSPICES_HOME_URL', plugin_dir_url( __FILE__ ) );
 
@@ -91,8 +91,41 @@ function sevenspices_home_featured_dishes( $limit = 8 ) {
 		return $featured;
 	}
 
-	$with_images = array();
-	$recent      = wc_get_products(
+	// Prefer signature food categories with photos over newest drinks/desserts.
+	$priority_slugs = array( 'appetizers', 'tandoor', 'curry', 'vegetarian', 'indo-chinese', 'biryani', 'only-chicken-curry', 'lamb-goat' );
+	$picked         = array();
+	$seen           = array();
+
+	foreach ( $priority_slugs as $slug ) {
+		$batch = wc_get_products(
+			array(
+				'status'   => 'publish',
+				'limit'    => 6,
+				'category' => array( $slug ),
+				'orderby'  => 'date',
+				'order'    => 'DESC',
+			)
+		);
+		if ( ! is_array( $batch ) ) {
+			continue;
+		}
+		foreach ( $batch as $product ) {
+			$id = $product->get_id();
+			if ( isset( $seen[ $id ] ) ) {
+				continue;
+			}
+			if ( ! $product->get_image_id() ) {
+				continue;
+			}
+			$seen[ $id ] = true;
+			$picked[]    = $product;
+			if ( count( $picked ) >= $limit ) {
+				return $picked;
+			}
+		}
+	}
+
+	$recent = wc_get_products(
 		array(
 			'status'  => 'publish',
 			'limit'   => 40,
@@ -101,21 +134,26 @@ function sevenspices_home_featured_dishes( $limit = 8 ) {
 		)
 	);
 	if ( ! is_array( $recent ) ) {
-		return array();
+		return $picked;
 	}
 	foreach ( $recent as $product ) {
-		if ( $product->get_image_id() ) {
-			$with_images[] = $product;
+		$id = $product->get_id();
+		if ( isset( $seen[ $id ] ) ) {
+			continue;
 		}
-		if ( count( $with_images ) >= $limit ) {
+		if ( $product->get_image_id() ) {
+			$seen[ $id ] = true;
+			$picked[]    = $product;
+		}
+		if ( count( $picked ) >= $limit ) {
 			break;
 		}
 	}
-	if ( count( $with_images ) >= 4 ) {
-		return $with_images;
+	if ( count( $picked ) >= 4 ) {
+		return $picked;
 	}
 
-	return array_slice( $recent, 0, $limit );
+	return array_slice( array_merge( $picked, $recent ), 0, $limit );
 }
 
 /**
