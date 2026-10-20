@@ -82,18 +82,20 @@ function knox_ac_quote_form_template() {
         [number qty-5 min:0 step:1 placeholder "QTY"]
       </div>
     </div>
-    <p class="knox-qf-note">Approximate measurements are acceptable for a rough quotation.</p>
+    <p class="knox-qf-note">Note: Approximate measurements are acceptable for a rough quotation.</p>
   </fieldset>
 
   <fieldset class="knox-qf-section">
     <legend>Glass &amp; Colour</legend>
     <div class="knox-qf-grid">
       <div>
-        <p><label>Preferred Frame Colour<br>[select frame-colour include_blank "Black" "White" "Silver" "Monument" "Woodland Grey" "Custom Colour"]</label></p>
+        <p class="knox-qf-label">Preferred Frame Colour</p>
+        [checkbox frame-colour use_label_element "Black" "White" "Silver" "Monument" "Woodland Grey" "Custom Colour"]
         <p><label>Custom colour (if Custom Colour selected)<br>[text custom-frame-colour placeholder "Please specify the colour"]</label></p>
       </div>
       <div>
-        <p><label>Glass Type<br>[select glass-type include_blank "Standard Clear" "Double Glazed" "Tinted" "Frosted" "Low-E Energy Efficient" "Not Sure"]</label></p>
+        <p class="knox-qf-label">Glass Type</p>
+        [checkbox glass-type use_label_element "Standard Clear" "Double Glazed" "Tinted" "Frosted" "Low-E Energy Efficient" "Not Sure"]
       </div>
     </div>
   </fieldset>
@@ -102,10 +104,12 @@ function knox_ac_quote_form_template() {
     <legend>Installation</legend>
     <div class="knox-qf-grid">
       <div>
-        <p><label>Job Type <span class="knox-qf-req">*</span><br>[select* job-type include_blank "Supply Only" "Supply and Installation" "Replacement of Existing Windows or Doors" "New Build" "Renovation"]</label></p>
+        <p class="knox-qf-label">Job Type <span class="knox-qf-req">*</span></p>
+        [checkbox* job-type exclusive use_label_element "Supply Only" "Supply & Installation" "Replacement of Existing Windows/Doors" "New Build" "Renovation"]
       </div>
       <div>
-        <p><label>Property Type <span class="knox-qf-req">*</span><br>[select* property-type include_blank "House" "Townhouse" "Apartment" "Commercial Building" "Other"]</label></p>
+        <p class="knox-qf-label">Property Type <span class="knox-qf-req">*</span></p>
+        [checkbox* property-type exclusive use_label_element "House" "Townhouse" "Apartment" "Commercial Building" "Other"]
         <p><label>Other property type (if Other selected)<br>[text other-property-type placeholder "Please specify the property type"]</label></p>
       </div>
     </div>
@@ -116,14 +120,21 @@ function knox_ac_quote_form_template() {
     <div class="knox-qf-grid">
       <p><label>Project Location (Suburb) <span class="knox-qf-req">*</span><br>[text* project-suburb placeholder "Enter your project suburb"]</label></p>
       <div>
-        <p><label>Expected Installation Time<br>[select installation-time include_blank "ASAP" "Within 1 Month" "Within 3 Months" "Just Planning"]</label></p>
+        <p class="knox-qf-label">Expected Installation Time</p>
+        [checkbox installation-time exclusive use_label_element "ASAP" "Within 1 Month" "Within 3 Months" "Just Planning"]
       </div>
     </div>
   </fieldset>
 
   <fieldset class="knox-qf-section">
     <legend>Uploads (Optional)</legend>
-    <p class="knox-qf-help">Attach photos of existing windows or doors, house plans, architectural drawings, or sketches with measurements to help us provide a more accurate estimate.</p>
+    <p class="knox-qf-help">Attach any of the following to help us provide a more accurate estimate:</p>
+    <ul class="knox-qf-upload-list">
+      <li>Photos of the existing windows or doors</li>
+      <li>House plans</li>
+      <li>Architectural drawings</li>
+      <li>Sketches with measurements</li>
+    </ul>
     <p><label>Upload file 1<br>[file project-files filetypes:jpg|jpeg|png|webp|pdf limit:10mb]</label></p>
     <p><label>Upload file 2 (optional)<br>[file project-files-2 filetypes:jpg|jpeg|png|webp|pdf limit:10mb]</label></p>
     <p><label>Upload file 3 (optional)<br>[file project-files-3 filetypes:jpg|jpeg|png|webp|pdf limit:10mb]</label></p>
@@ -136,8 +147,8 @@ function knox_ac_quote_form_template() {
   </fieldset>
 
   <fieldset class="knox-qf-section">
-    <legend>How Did You Hear About Knox Aluminium?</legend>
-    [select lead-source include_blank "Google Search" "Google Maps" "Facebook" "Instagram" "Referral" "Existing Customer" "Builder" "Other"]
+    <legend>How did you hear about Knox Aluminium?</legend>
+    [checkbox lead-source exclusive use_label_element "Google Search" "Google Maps" "Facebook" "Instagram" "Referral" "Existing Customer" "Builder" "Other"]
     <p><label>Other source (if Other selected)<br>[text other-lead-source placeholder "Please specify"]</label></p>
   </fieldset>
 

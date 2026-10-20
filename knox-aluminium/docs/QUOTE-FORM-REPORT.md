@@ -2,7 +2,8 @@
 
 **Site:** https://smartscrapmetals.com.au/kaluminium/  
 **Date:** 20 Oct 2026  
-**Plugin:** `knox-aluminium-content` v1.2.1
+**Plugin:** `knox-aluminium-content` v1.2.2  
+**PDF reference:** Knox Aluminium Windows sample form (uploaded)
 
 ---
 
@@ -61,11 +62,12 @@ No conditional-fields plugin is installed. Optional “Other / Custom” text fi
 
 ---
 
-## Field notes (CF7 constraints)
+## Field notes (CF7 + PDF)
 
-- Job Type / Property Type / frame colour / glass / installation time / lead source use **select** (not radio) so optional blanks work and CF7 does not treat `/` or `&` in option labels as tag delimiters.
-- Labels use “Supply and Installation” and “Replacement of Existing Windows or Doors” (PDF meaning preserved; slash/`&` avoided inside CF7 tags).
-- Measurements: five optional rows; no Price column.
+- Choice groups match the PDF checkbox layout; single-answer groups use CF7 `exclusive` checkboxes (Job Type, Property Type, Installation Time, Lead Source, Frame Colour, Glass Type).
+- Job Type labels match the PDF, including “Supply & Installation” and “Replacement of Existing Windows/Doors”.
+- Measurements: five optional Width / Height / QTY rows. PDF shows a PRICE column header with blank cells — **no customer Price input** (pricing calculated by Knox).
+- Upload helper list matches the PDF bullet wording.
 
 ---
 

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Knox Aluminium Content
  * Description: PDF-aligned page content, alternating image/content layouts, SEO helpers, and page sync for Knox Aluminium Windows.
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Knox Aluminium
  * Text Domain: knox-aluminium-content
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KNOX_AC_VERSION', '1.2.1' );
+define( 'KNOX_AC_VERSION', '1.2.2' );
 define( 'KNOX_AC_FILE', __FILE__ );
 define( 'KNOX_AC_DIR', plugin_dir_path( __FILE__ ) );
 define( 'KNOX_AC_URL', plugin_dir_url( __FILE__ ) );

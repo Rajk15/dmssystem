@@ -414,6 +414,16 @@ body.knox-ac-page .main-title-section h1 {
   margin: 0.35rem 0 0.85rem;
 }
 
+.knox-quote-form .knox-qf-upload-list {
+  margin: 0 0 1rem 1.1rem;
+  padding: 0;
+  color: var(--knox-muted);
+}
+
+.knox-quote-form .knox-qf-upload-list li {
+  margin: 0.25rem 0;
+}
+
 .knox-quote-form input[type="text"],
 .knox-quote-form input[type="email"],
 .knox-quote-form input[type="tel"],
