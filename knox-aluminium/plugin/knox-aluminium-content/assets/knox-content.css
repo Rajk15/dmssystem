@@ -1,0 +1,567 @@
+/* Knox Aluminium — alternating image/content sections
+   Brand tokens match Windoor Elementor globals (black + #EDC701 accent). */
+
+:root {
+  --knox-ink: #000000;
+  --knox-muted: #565656;
+  --knox-accent: #edc701;
+  --knox-bg: #ffffff;
+  --knox-bg-alt: #f5f5f5;
+  --knox-border: #e8e8e8;
+  --knox-max: 1180px;
+  --knox-gap: 2.5rem;
+  --knox-radius: 2px;
+}
+
+.knox-page {
+  color: var(--knox-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.knox-page h1,
+.knox-page h2,
+.knox-page h3 {
+  color: var(--knox-ink);
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+}
+
+.knox-page h1 {
+  font-size: clamp(1.75rem, 3vw, 2.6rem);
+  max-width: 18ch;
+}
+
+.knox-page h2 {
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+}
+
+.knox-page h3 {
+  font-size: 1.2rem;
+}
+
+.knox-page p {
+  margin: 0 0 1rem;
+}
+
+.knox-page ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.15rem;
+}
+
+.knox-page li {
+  margin-bottom: 0.4rem;
+}
+
+.knox-hero {
+  background: linear-gradient(135deg, #111 0%, #2a2a2a 55%, #1a1a1a 100%);
+  color: #f5f5f5;
+  padding: clamp(3rem, 8vw, 5.5rem) 1.25rem;
+}
+
+.knox-hero .knox-wrap {
+  max-width: var(--knox-max);
+  margin: 0 auto;
+}
+
+.knox-hero h1 {
+  color: #fff;
+  max-width: 22ch;
+}
+
+.knox-hero p {
+  color: #d8d8d8;
+  max-width: 62ch;
+  font-size: 1.08rem;
+}
+
+.knox-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.knox-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.35rem;
+  border: 1px solid transparent;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.knox-btn-primary {
+  background: var(--knox-accent);
+  color: #000 !important;
+}
+
+.knox-btn-primary:hover {
+  background: #ffd84a;
+  color: #000 !important;
+}
+
+.knox-btn-secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff !important;
+}
+
+.knox-btn-secondary:hover {
+  border-color: var(--knox-accent);
+  color: var(--knox-accent) !important;
+}
+
+.knox-btn-dark {
+  background: var(--knox-ink);
+  color: #fff !important;
+}
+
+.knox-btn-dark:hover {
+  background: #222;
+  color: #fff !important;
+}
+
+.knox-section {
+  padding: clamp(2.5rem, 6vw, 4.25rem) 1.25rem;
+  background: var(--knox-bg);
+}
+
+.knox-section.is-alt {
+  background: var(--knox-bg-alt);
+}
+
+.knox-wrap {
+  max-width: var(--knox-max);
+  margin: 0 auto;
+}
+
+.knox-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--knox-gap);
+  align-items: center;
+}
+
+.knox-split.reverse .knox-split-media {
+  order: 2;
+}
+
+.knox-split.reverse .knox-split-copy {
+  order: 1;
+}
+
+.knox-split-media {
+  min-width: 0;
+}
+
+.knox-split-media figure {
+  margin: 0;
+  overflow: hidden;
+  background: #ececec;
+}
+
+.knox-split-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.knox-split-copy {
+  min-width: 0;
+}
+
+.knox-kicker {
+  display: block;
+  color: var(--knox-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.knox-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.knox-grid-4,
+.knox-grid-2 {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.knox-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.knox-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.knox-card {
+  padding: 1.25rem 1.35rem;
+  border-top: 3px solid var(--knox-accent);
+  background: #fff;
+}
+
+.knox-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.knox-card a {
+  color: var(--knox-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.knox-steps {
+  counter-reset: knox-step;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.knox-steps li {
+  position: relative;
+  padding: 1.1rem 1.1rem 1.1rem 4rem;
+  background: #fff;
+  border: 1px solid var(--knox-border);
+}
+
+.knox-steps li::before {
+  counter-increment: knox-step;
+  content: counter(knox-step);
+  position: absolute;
+  left: 1rem;
+  top: 1.1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--knox-accent);
+  color: #000;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.knox-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--knox-gap);
+  align-items: start;
+}
+
+.knox-contact-details dt {
+  font-weight: 700;
+  color: var(--knox-ink);
+  margin-top: 0.75rem;
+}
+
+.knox-contact-details dd {
+  margin: 0.15rem 0 0;
+}
+
+.knox-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.knox-gallery-grid figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+.knox-gallery-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.knox-narrow {
+  max-width: 720px;
+}
+
+@media (max-width: 900px) {
+  .knox-split,
+  .knox-split.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .knox-split.reverse .knox-split-media,
+  .knox-split.reverse .knox-split-copy,
+  .knox-split .knox-split-media,
+  .knox-split .knox-split-copy {
+    order: initial;
+  }
+
+  /* Reading order: image then content on mobile for all splits */
+  .knox-split .knox-split-media {
+    order: 1;
+  }
+
+  .knox-split .knox-split-copy {
+    order: 2;
+  }
+
+  .knox-grid-4,
+  .knox-grid-2,
+  .knox-contact-grid,
+  .knox-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .knox-grid-2,
+  .knox-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Prefer the in-content H1 from Knox sections over the theme banner title. */
+body.knox-ac-page .main-title-section h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* —— Request a Free Rough Quote (CF7) —— */
+.knox-quote-form,
+.knox-qf-page-header {
+  color: var(--knox-muted);
+}
+
+.knox-qf-page-header {
+  margin-bottom: 2rem;
+  max-width: 720px;
+}
+
+.knox-qf-page-header h1 {
+  color: var(--knox-ink);
+  margin-bottom: 0.75rem;
+}
+
+.knox-quote-form .knox-qf-intro h2 {
+  color: var(--knox-ink);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  margin: 0 0 0.75rem;
+}
+
+.knox-quote-form fieldset.knox-qf-section {
+  border: 1px solid var(--knox-border);
+  margin: 0 0 1.5rem;
+  padding: 1.25rem 1.35rem 1.5rem;
+  background: #fff;
+}
+
+.knox-quote-form legend {
+  color: var(--knox-ink);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0 0.35rem;
+}
+
+.knox-quote-form .knox-qf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+}
+
+.knox-quote-form .knox-qf-grid > p:last-child:nth-child(odd),
+.knox-quote-form .knox-qf-grid > .wpcf7-form-control-wrap {
+  grid-column: auto;
+}
+
+.knox-quote-form label,
+.knox-quote-form .knox-qf-label {
+  display: block;
+  color: var(--knox-ink);
+  font-weight: 600;
+  margin: 0.35rem 0 0.45rem;
+}
+
+.knox-quote-form .knox-qf-req {
+  color: #9f2124;
+}
+
+.knox-quote-form .knox-qf-help,
+.knox-quote-form .knox-qf-note {
+  font-size: 0.95rem;
+  margin: 0.35rem 0 0.85rem;
+}
+
+.knox-quote-form .knox-qf-upload-list {
+  margin: 0 0 1rem 1.1rem;
+  padding: 0;
+  color: var(--knox-muted);
+}
+
+.knox-quote-form .knox-qf-upload-list li {
+  margin: 0.25rem 0;
+}
+
+.knox-quote-form input[type="text"],
+.knox-quote-form input[type="email"],
+.knox-quote-form input[type="tel"],
+.knox-quote-form input[type="number"],
+.knox-quote-form input[type="file"],
+.knox-quote-form select,
+.knox-quote-form textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid #cfcfcf;
+  border-radius: var(--knox-radius);
+  background: #fff;
+  color: var(--knox-ink);
+  font: inherit;
+}
+
+.knox-quote-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.knox-quote-form input:focus,
+.knox-quote-form select:focus,
+.knox-quote-form textarea:focus {
+  outline: 2px solid var(--knox-accent);
+  outline-offset: 1px;
+  border-color: #b89a00;
+}
+
+.knox-quote-form .wpcf7-list-item {
+  display: block;
+  margin: 0 0 0.45rem;
+}
+
+.knox-quote-form .wpcf7-list-item label {
+  font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  cursor: pointer;
+}
+
+.knox-quote-form .wpcf7-list-item input[type="checkbox"],
+.knox-quote-form .wpcf7-list-item input[type="radio"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.15rem;
+  flex: 0 0 auto;
+  accent-color: #000;
+}
+
+.knox-quote-form .knox-qf-measure-table {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.knox-quote-form .knox-qf-measure-head,
+.knox-quote-form .knox-qf-measure-row {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1.2fr) 1fr 1fr 0.8fr;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.knox-quote-form .knox-qf-measure-head {
+  font-weight: 700;
+  color: var(--knox-ink);
+  font-size: 0.9rem;
+}
+
+.knox-quote-form .knox-qf-measure-label {
+  color: var(--knox-ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.knox-quote-form .knox-qf-disclaimer {
+  background: var(--knox-bg-alt);
+  border-left: 3px solid var(--knox-accent);
+  padding: 1rem 1.15rem;
+  margin: 0 0 1.25rem;
+}
+
+.knox-quote-form .knox-qf-disclaimer p {
+  margin: 0;
+  color: var(--knox-muted);
+}
+
+.knox-quote-form .knox-qf-submit input[type="submit"],
+.knox-quote-form .knox-qf-submit .wpcf7-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.6rem;
+  background: var(--knox-accent);
+  color: #000;
+  border: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.knox-quote-form .knox-qf-submit input[type="submit"]:hover,
+.knox-quote-form .knox-qf-submit .wpcf7-submit:hover {
+  background: #ffd84a;
+}
+
+.knox-quote-form .wpcf7-not-valid-tip {
+  color: #9f2124;
+  font-size: 0.88rem;
+}
+
+.knox-quote-form .wpcf7-response-output {
+  margin: 1rem 0 0;
+  border-radius: var(--knox-radius);
+}
+
+@media (max-width: 900px) {
+  .knox-quote-form .knox-qf-grid,
+  .knox-quote-form .knox-qf-measure-head,
+  .knox-quote-form .knox-qf-measure-row {
+    grid-template-columns: 1fr;
+  }
+
+  .knox-quote-form .knox-qf-measure-head {
+    display: none;
+  }
+
+  .knox-quote-form .knox-qf-measure-row {
+    border: 1px solid var(--knox-border);
+    padding: 0.85rem;
+    background: #fafafa;
+  }
+
+  .knox-quote-form .knox-qf-measure-label {
+    margin-bottom: 0.25rem;
+  }
+}
