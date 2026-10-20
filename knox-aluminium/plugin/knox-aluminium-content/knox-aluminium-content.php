@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Knox Aluminium Content
  * Description: PDF-aligned page content, alternating image/content layouts, SEO helpers, and page sync for Knox Aluminium Windows.
- * Version: 1.0.1
+ * Version: 1.1.0
  * Author: Knox Aluminium
  * Text Domain: knox-aluminium-content
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KNOX_AC_VERSION', '1.0.1' );
+define( 'KNOX_AC_VERSION', '1.1.0' );
 define( 'KNOX_AC_FILE', __FILE__ );
 define( 'KNOX_AC_DIR', plugin_dir_path( __FILE__ ) );
 define( 'KNOX_AC_URL', plugin_dir_url( __FILE__ ) );
@@ -20,6 +20,7 @@ require_once KNOX_AC_DIR . 'includes/media.php';
 require_once KNOX_AC_DIR . 'includes/content.php';
 require_once KNOX_AC_DIR . 'includes/sync.php';
 require_once KNOX_AC_DIR . 'includes/seo.php';
+require_once KNOX_AC_DIR . 'includes/header.php';
 
 /**
  * Front-end assets for alternating layouts.
@@ -60,9 +61,13 @@ function knox_ac_admin_page() {
 	if ( isset( $_POST['knox_ac_sync'] ) && check_admin_referer( 'knox_ac_sync' ) ) {
 		$result = knox_ac_sync_all();
 	}
+	if ( isset( $_POST['knox_ac_header'] ) && check_admin_referer( 'knox_ac_sync' ) ) {
+		$result = knox_ac_apply_home_header_everywhere();
+	}
 
 	echo '<div class="wrap"><h1>Knox Aluminium Content Sync</h1>';
 	echo '<p>Creates/updates PDF-listed pages, alternating layouts, SEO meta, and repairs primary navigation.</p>';
+	echo '<p>Header tool assigns the homepage <strong>Home-1-header</strong> (wdt_headers #15461) to all public content so inner pages share the same topbar, logo, menu, and CTAs.</p>';
 	if ( is_array( $result ) ) {
 		echo '<div class="notice notice-success"><p><strong>Sync complete.</strong></p><ul>';
 		foreach ( $result as $line ) {
@@ -72,7 +77,8 @@ function knox_ac_admin_page() {
 	}
 	echo '<form method="post">';
 	wp_nonce_field( 'knox_ac_sync' );
-	echo '<p><button type="submit" name="knox_ac_sync" class="button button-primary">Run content sync</button></p>';
+	echo '<p><button type="submit" name="knox_ac_sync" class="button button-primary">Run content sync</button> ';
+	echo '<button type="submit" name="knox_ac_header" class="button">Apply homepage header sitewide</button></p>';
 	echo '</form></div>';
 }
 
@@ -80,16 +86,28 @@ function knox_ac_admin_page() {
  * REST trigger for authenticated editors (used by deploy script).
  */
 function knox_ac_register_rest() {
+	$can = function () {
+		return current_user_can( 'manage_options' );
+	};
 	register_rest_route(
 		'knox-ac/v1',
 		'/sync',
 		array(
 			'methods'             => 'POST',
-			'permission_callback' => function () {
-				return current_user_can( 'manage_options' );
-			},
+			'permission_callback' => $can,
 			'callback'            => function () {
 				return rest_ensure_response( knox_ac_sync_all() );
+			},
+		)
+	);
+	register_rest_route(
+		'knox-ac/v1',
+		'/apply-header',
+		array(
+			'methods'             => 'POST',
+			'permission_callback' => $can,
+			'callback'            => function () {
+				return rest_ensure_response( knox_ac_apply_home_header_everywhere() );
 			},
 		)
 	);

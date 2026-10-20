@@ -296,6 +296,7 @@ function knox_ac_sync_all() {
 
 	$log[] = knox_ac_fix_menu();
 	$log   = array_merge( $log, knox_ac_fix_redirects() );
+	$log   = array_merge( $log, knox_ac_apply_home_header_everywhere() );
 
 	// Flush caches.
 	if ( function_exists( 'flush_rewrite_rules' ) ) {
