@@ -213,7 +213,7 @@ function knox_ac_fix_menu() {
 		array( 'Process', '/process/' ),
 		array( 'Gallery', '/project-gallery/' ),
 		array( 'Contact Us', '/contact-us/' ),
-		array( 'Request a Free Quote', '/contact-us/' ),
+		array( 'Request a Free Quote', '/request-a-free-quote/' ),
 	);
 
 	$position = 1;
@@ -297,6 +297,7 @@ function knox_ac_sync_all() {
 	$log[] = knox_ac_fix_menu();
 	$log   = array_merge( $log, knox_ac_fix_redirects() );
 	$log   = array_merge( $log, knox_ac_apply_home_header_everywhere() );
+	$log   = array_merge( $log, knox_ac_sync_quote_page() );
 
 	// Flush caches.
 	if ( function_exists( 'flush_rewrite_rules' ) ) {

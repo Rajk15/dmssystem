@@ -37,6 +37,7 @@ function knox_ac_url( $path ) {
 
 function knox_ac_page_home() {
 	$contact = knox_ac_url( 'contact-us/' );
+	$quote = knox_ac_url( 'request-a-free-quote/' );
 	$windows = knox_ac_url( 'windows/' );
 	$doors   = knox_ac_url( 'doors/' );
 	$commercial = knox_ac_url( 'commercial-projects/' );
@@ -47,7 +48,7 @@ function knox_ac_page_home() {
 	$html .= '<h1>Architectural Aluminium Windows &amp; Doors — Designed for Performance. Built in Melbourne.</h1>';
 	$html .= '<p>Knox Aluminium Windows &amp; Doors delivers premium, Australian-made aluminium systems engineered for residential, commercial, and architectural projects. With over 25 years of industry experience, we manufacture and install high-performance windows, doors, shopfronts, and commercial framing solutions trusted by builders, developers, architects, and homeowners across Victoria.</p>';
 	$html .= '<div class="knox-hero-ctas">';
-	$html .= knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' );
+	$html .= knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' );
 	$html .= knox_ac_btn( 'Book a Site Consultation', $contact, 'knox-btn-secondary' );
 	$html .= knox_ac_btn( 'Explore Window Options', $windows, 'knox-btn-secondary' );
 	$html .= '</div></div></section>';
@@ -77,7 +78,7 @@ function knox_ac_page_home() {
 	$html .= '<div class="knox-card"><h3>Windows</h3><ul><li>Sashless Double Hung</li><li>Commercial Sliding</li><li>Awning &amp; Casement</li><li>Fixed Architectural Windows</li></ul><p><a href="' . esc_url( $windows ) . '">Explore Window Options</a></p></div>';
 	$html .= '<div class="knox-card"><h3>Doors</h3><ul><li>Commercial Multi-Fold</li><li>High-Performance Sliding</li><li>Ultra-Flat Sliding</li><li>Top-Hung Commercial Sliding</li><li>Shopfront Doors (Swan Evo, Torrens)</li></ul><p><a href="' . esc_url( $doors ) . '">View Door Systems</a></p></div>';
 	$html .= '<div class="knox-card"><h3>Commercial Systems</h3><ul><li>Shopfront Framing</li><li>Curtain Wall Systems</li><li>Architectural Framing</li><li>Thermally Broken Systems</li></ul><p><a href="' . esc_url( $commercial ) . '">Commercial Projects</a></p></div>';
-	$html .= '<div class="knox-card"><h3>Security &amp; Screening</h3><ul><li>Stainless Steel Mesh</li><li>Invisi-Gard Style Systems</li><li>Flyscreens</li><li>KidScreen Fall Prevention</li></ul><p><a href="' . esc_url( $contact ) . '">Request a Free Quote</a></p></div>';
+	$html .= '<div class="knox-card"><h3>Security &amp; Screening</h3><ul><li>Stainless Steel Mesh</li><li>Invisi-Gard Style Systems</li><li>Flyscreens</li><li>KidScreen Fall Prevention</li></ul><p><a href="' . esc_url( $quote ) . '">Request a Free Quote</a></p></div>';
 	$html .= '</div></div></section>';
 
 	$html .= knox_ac_split(
@@ -95,13 +96,13 @@ function knox_ac_page_home() {
 		</ul>',
 		false,
 		false,
-		knox_ac_btn( 'See Our Process', $process, 'knox-btn-dark' ) . knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' )
+		knox_ac_btn( 'See Our Process', $process, 'knox-btn-dark' ) . knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' )
 	);
 
 	$html .= '<section class="knox-section is-alt"><div class="knox-wrap knox-narrow">';
 	$html .= '<h2>Ready to upgrade your windows and doors?</h2>';
 	$html .= '<p>Speak with our specialists today about residential, commercial, and architectural aluminium systems manufactured in Melbourne.</p>';
-	$html .= '<div class="knox-cta-row">' . knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' ) . knox_ac_btn( 'Contact Our Team', $contact, 'knox-btn-dark' ) . '</div>';
+	$html .= '<div class="knox-cta-row">' . knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' ) . knox_ac_btn( 'Contact Our Team', $contact, 'knox-btn-dark' ) . '</div>';
 	$html .= '</div></section></div>';
 
 	return $html;
@@ -109,6 +110,7 @@ function knox_ac_page_home() {
 
 function knox_ac_page_about() {
 	$contact = knox_ac_url( 'contact-us/' );
+	$quote = knox_ac_url( 'request-a-free-quote/' );
 	$warranty = knox_ac_url( 'warranty/' );
 
 	$html  = '<div class="knox-page">';
@@ -130,7 +132,7 @@ function knox_ac_page_about() {
 		<p>We proudly offer a 10-year product warranty and 10-year installation warranty, giving clients confidence in the long-term performance of our systems.</p>',
 		false,
 		true,
-		knox_ac_btn( 'View Our Warranty', $warranty, 'knox-btn-dark' ) . knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' )
+		knox_ac_btn( 'View Our Warranty', $warranty, 'knox-btn-dark' ) . knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' )
 	);
 
 	$html .= '</div>';
@@ -139,6 +141,7 @@ function knox_ac_page_about() {
 
 function knox_ac_page_windows() {
 	$contact = knox_ac_url( 'contact-us/' );
+	$quote = knox_ac_url( 'request-a-free-quote/' );
 	$doors   = knox_ac_url( 'doors/' );
 
 	$systems = array(
@@ -188,7 +191,7 @@ function knox_ac_page_windows() {
 		<p>Knox Aluminium manufactures a complete range of aluminium window systems suitable for residential homes, apartments, commercial buildings, and architectural façades. Our windows deliver exceptional strength, weather protection, thermal performance, and modern aesthetics.</p>',
 		true,
 		false,
-		knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' ) . knox_ac_btn( 'View Door Systems', $doors, 'knox-btn-dark' )
+		knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' ) . knox_ac_btn( 'View Door Systems', $doors, 'knox-btn-dark' )
 	);
 
 	$html .= '<section class="knox-section is-alt"><div class="knox-wrap"><h2>Our Window Systems</h2></div></section>';
@@ -202,7 +205,7 @@ function knox_ac_page_windows() {
 			$sys['body'],
 			$sys['left'],
 			( $i % 2 === 1 ),
-			( $i === count( $systems ) - 1 ) ? knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' ) : ''
+			( $i === count( $systems ) - 1 ) ? knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' ) : ''
 		);
 		$i++;
 	}
@@ -213,6 +216,7 @@ function knox_ac_page_windows() {
 
 function knox_ac_page_doors() {
 	$contact = knox_ac_url( 'contact-us/' );
+	$quote = knox_ac_url( 'request-a-free-quote/' );
 	$windows = knox_ac_url( 'windows/' );
 
 	$systems = array(
@@ -234,7 +238,7 @@ function knox_ac_page_doors() {
 		<p>Knox Aluminium manufactures premium aluminium door systems designed for residential, commercial, and industrial environments. Our doors deliver smooth operation, wide openings, and long-term durability.</p>',
 		true,
 		false,
-		knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' ) . knox_ac_btn( 'Explore Window Options', $windows, 'knox-btn-dark' )
+		knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' ) . knox_ac_btn( 'Explore Window Options', $windows, 'knox-btn-dark' )
 	);
 
 	$html .= '<section class="knox-section is-alt"><div class="knox-wrap"><h2>Our Door Systems</h2></div></section>';
@@ -247,7 +251,7 @@ function knox_ac_page_doors() {
 			$sys[3],
 			$sys[4],
 			( $i % 2 === 1 ),
-			( $i === count( $systems ) - 1 ) ? knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' ) : ''
+			( $i === count( $systems ) - 1 ) ? knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' ) : ''
 		);
 	}
 
@@ -257,6 +261,7 @@ function knox_ac_page_doors() {
 
 function knox_ac_page_commercial() {
 	$contact = knox_ac_url( 'contact-us/' );
+	$quote = knox_ac_url( 'request-a-free-quote/' );
 	$html  = '<div class="knox-page">';
 	$html .= knox_ac_split(
 		'landing_1',
@@ -266,7 +271,7 @@ function knox_ac_page_commercial() {
 		<p>Knox Aluminium specialises in commercial aluminium systems designed for retail stores, offices, hospitality venues, industrial buildings, and multi-residential developments.</p>',
 		true,
 		false,
-		knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' )
+		knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' )
 	);
 
 	$html .= knox_ac_split(
@@ -293,6 +298,7 @@ function knox_ac_page_commercial() {
 
 function knox_ac_page_process() {
 	$contact = knox_ac_url( 'contact-us/' );
+	$quote = knox_ac_url( 'request-a-free-quote/' );
 	$html  = '<div class="knox-page">';
 	$html .= knox_ac_split(
 		'service_2',
@@ -308,7 +314,7 @@ function knox_ac_page_process() {
 		</ol>',
 		true,
 		false,
-		knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' ) . knox_ac_btn( 'Book a Site Consultation', $contact, 'knox-btn-dark' )
+		knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' ) . knox_ac_btn( 'Book a Site Consultation', $contact, 'knox-btn-dark' )
 	);
 	$html .= '</div>';
 	return $html;
@@ -336,10 +342,11 @@ function knox_ac_page_contact() {
 
 function knox_ac_page_warranty() {
 	$contact = knox_ac_url( 'contact-us/' );
+	$quote = knox_ac_url( 'request-a-free-quote/' );
 	$html  = '<div class="knox-page"><section class="knox-section"><div class="knox-wrap knox-narrow">';
 	$html .= '<h1>Our Warranty</h1>';
 	$html .= '<p>All Knox Aluminium products are backed by a 10-year product warranty and a 10-year installation warranty when installed by our qualified team.</p>';
-	$html .= '<div class="knox-cta-row">' . knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' ) . knox_ac_btn( 'Contact Our Team', $contact, 'knox-btn-dark' ) . '</div>';
+	$html .= '<div class="knox-cta-row">' . knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' ) . knox_ac_btn( 'Contact Our Team', $contact, 'knox-btn-dark' ) . '</div>';
 	$html .= '</div></section></div>';
 	return $html;
 }
@@ -363,7 +370,7 @@ function knox_ac_page_gallery() {
 		}
 	}
 	$html .= '</div>';
-	$html .= '<div class="knox-cta-row" style="margin-top:2rem">' . knox_ac_btn( 'Request a Free Quote', knox_ac_url( 'contact-us/' ), 'knox-btn-primary' ) . '</div>';
+	$html .= '<div class="knox-cta-row" style="margin-top:2rem">' . knox_ac_btn( 'Request a Free Quote', knox_ac_url( 'request-a-free-quote/' ), 'knox-btn-primary' ) . '</div>';
 	$html .= '</div></section></div>';
 	return $html;
 }
@@ -396,6 +403,7 @@ function knox_ac_location_blurb( $suburb ) {
 
 function knox_ac_page_location( $suburb ) {
 	$contact = knox_ac_url( 'contact-us/' );
+	$quote = knox_ac_url( 'request-a-free-quote/' );
 	$blurb   = knox_ac_location_blurb( $suburb );
 	$html    = '<div class="knox-page">';
 	$html   .= knox_ac_split(
@@ -406,7 +414,7 @@ function knox_ac_page_location( $suburb ) {
 		<p>From architectural homes to commercial façades, our Melbourne-made aluminium systems are fabricated and installed to suit local project requirements. Explore our <a href="' . esc_url( knox_ac_url( 'windows/' ) ) . '">window systems</a>, <a href="' . esc_url( knox_ac_url( 'doors/' ) ) . '">door systems</a>, and <a href="' . esc_url( knox_ac_url( 'commercial-projects/' ) ) . '">commercial solutions</a>.</p>',
 		true,
 		false,
-		knox_ac_btn( 'Request a Free Quote', $contact, 'knox-btn-primary' ) . knox_ac_btn( 'Contact Our Team', $contact, 'knox-btn-dark' )
+		knox_ac_btn( 'Request a Free Quote', $quote, 'knox-btn-primary' ) . knox_ac_btn( 'Contact Our Team', $contact, 'knox-btn-dark' )
 	);
 	$html .= '</div>';
 	return $html;
