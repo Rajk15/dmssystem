@@ -156,6 +156,46 @@
   .page-id-36 .elementor-element-e75b00b { order: 2; margin-top: 24px; }
 }
 
+
+/* Gallery section – light bg image washed out white titles */
+.page-id-36 .elementor-element-d6d70b4,
+.page-id-36 .elementor-element-d6d70b4:not(.elementor-motion-effects-element-type-background),
+.page-id-36 .elementor-element-d6d70b4 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: #120F0B !important;
+  background-image: none !important;
+}
+.page-id-36 .elementor-element-3aeeebe .title-area,
+.page-id-36 .elementor-element-3aeeebe .sub-title,
+.page-id-36 .elementor-element-3aeeebe .sub-title.style2,
+.page-id-36 .elementor-element-3aeeebe .sec-title,
+.page-id-36 .elementor-element-3aeeebe .sec-title.split-text,
+.page-id-36 .elementor-element-3aeeebe .sec-title *,
+.page-id-36 .elementor-element-3aeeebe .sub-title *,
+.page-id-36 .elementor-element-3aeeebe .split-line,
+.page-id-36 .elementor-element-3aeeebe .split-line *,
+.page-id-36 .elementor-element-3aeeebe .text-anime,
+.page-id-36 .elementor-element-3aeeebe .text-anime * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.page-id-36 .elementor-element-3aeeebe .text-theme,
+.page-id-36 .elementor-element-3aeeebe .text-theme * {
+  color: #be883d !important;
+  -webkit-text-fill-color: #be883d !important;
+}
+.page-id-36 .elementor-element-ced6fa4 .filter-menu .tab-btn,
+.page-id-36 .filter-menu .tab-btn {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border-color: rgba(255,255,255,0.25) !important;
+}
+.page-id-36 .filter-menu .tab-btn.active {
+  color: #be883d !important;
+  border-color: #be883d !important;
+}
+
 /* Counters / choose / services / team / gallery / FAQ / testimonials / brands */
 .page-id-36 .counter-card,
 .page-id-36 .counter-card_wrapp,
