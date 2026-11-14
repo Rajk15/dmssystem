@@ -271,22 +271,36 @@
   padding: 28px 0 !important;
 }
 
-/* Footer on about page */
-.page-id-36 .footer-wrapper,
+
+/* Footer on about page – solid black */
 .page-id-36 footer,
 .page-id-36 .elementor-159,
+.page-id-36 .elementor-159 .e-con,
+.page-id-36 .elementor-159 .e-con.e-parent,
+.page-id-36 .elementor-159 .e-con.e-child,
+.page-id-36 .footer-wrapper,
+.page-id-36 .footer-layout2,
+.page-id-36 .elementor-element-ad27e81,
+.page-id-36 .elementor-element-e3d919f,
+.page-id-36 .elementor-element-56d3f8b,
+.page-id-36 .elementor-element-2919b97,
+.page-id-36 .elementor-element-757f889,
+.page-id-36 .elementor-element-ad27e81:not(.elementor-motion-effects-element-type-background),
+.page-id-36 .elementor-element-ad27e81 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: #000000 !important;
+  background-image: none !important;
+}
 .page-id-36 .copyright-text,
 .page-id-36 .footer-links a,
 .page-id-36 .footer-widget,
 .page-id-36 .footer-widget p,
 .page-id-36 .footer-widget a,
 .page-id-36 .footer-widget h3,
-.page-id-36 .footer-widget .widget_title {
+.page-id-36 .footer-widget .widget_title,
+.page-id-36 .footer-info,
+.page-id-36 .footer-info .desc,
+.page-id-36 .footer-info a {
   color: #ffffff !important;
-}
-.page-id-36 .footer-wrapper,
-.page-id-36 .elementor-159 .e-con.e-parent {
-  background-color: #120F0B !important;
 }
 
 /* Overflow / media safety */
