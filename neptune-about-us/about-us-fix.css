@@ -68,6 +68,20 @@
 }
 
 
+
+/* Features strip under intro – theme sets #F8F8F8 with global white text */
+.page-id-36 .about-area2,
+.page-id-36 .elementor-element-8c1647e .about-area2 {
+  background-color: #120F0B !important;
+}
+.page-id-36 .about-area2 .box-title,
+.page-id-36 .about-area2 .media-body,
+.page-id-36 .about-area2 .media-body p,
+.page-id-36 .about-area2 h3,
+.page-id-36 .about-area2 p {
+  color: #ffffff !important;
+}
+
 /* Top intro: show right-side about image on mobile */
 .page-id-36 .elementor-element-b8142aa,
 .page-id-36 .elementor-element-b8142aa.elementor-invisible {
