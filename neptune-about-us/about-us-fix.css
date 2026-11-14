@@ -1,4 +1,78 @@
-/* Breadcrumb / page title – white text on #120F0B */
+/* ===== Base page ===== */
+.page-id-36,
+.page-id-36 .builder-page-wrapper,
+.page-id-36 .faren-fluid,
+.page-id-36 .elementor-36 {
+  background-color: #120F0B !important;
+  color: #ffffff !important;
+}
+.page-id-36 h1,
+.page-id-36 h2,
+.page-id-36 h3,
+.page-id-36 h4,
+.page-id-36 h5,
+.page-id-36 h6,
+.page-id-36 p,
+.page-id-36 li,
+.page-id-36 span,
+.page-id-36 a,
+.page-id-36 .sec-title,
+.page-id-36 .sub-title,
+.page-id-36 .box-title,
+.page-id-36 .box-text,
+.page-id-36 .box-number,
+.page-id-36 .elementor-heading-title,
+.page-id-36 .elementor-widget-text-editor,
+.page-id-36 .elementor-widget-text-editor p {
+  color: #ffffff !important;
+}
+.page-id-36 a:hover {
+  color: #be883d !important;
+}
+
+/* ===== Sticky / header menu ===== */
+.page-id-36 .th-header .sticky-wrapper,
+.page-id-36 .th-header .sticky-wrapper.sticky,
+.page-id-36 .header-layout1 .sticky-wrapper.sticky {
+  background-color: #120F0B !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35) !important;
+}
+.page-id-36 .th-header .menu-area,
+.page-id-36 .sticky-wrapper.sticky .menu-area {
+  background-color: #120F0B !important;
+}
+.page-id-36 .main-menu > ul > li > a,
+.page-id-36 .sticky-wrapper.sticky .main-menu > ul > li > a,
+.page-id-36 .main-menu ul.sub-menu li a,
+.page-id-36 .header-button .icon-btn,
+.page-id-36 .sticky-wrapper.sticky .header-button .icon-btn,
+.page-id-36 .th-menu-toggle,
+.page-id-36 .header-layout1 .main-menu > ul > li > a {
+  color: #ffffff !important;
+}
+.page-id-36 .header-button .icon-btn,
+.page-id-36 .sticky-wrapper.sticky .header-button .icon-btn,
+.page-id-36 .th-menu-toggle.style-text,
+.page-id-36 .th-menu-toggle.style-text-white {
+  background-color: #be883d !important;
+  color: #ffffff !important;
+  border-color: #be883d !important;
+}
+.page-id-36 .th-menu-wrapper .th-menu-area,
+.page-id-36 .th-mobile-menu {
+  background-color: #120F0B !important;
+}
+.page-id-36 .th-mobile-menu a,
+.page-id-36 .th-menu-wrapper .th-menu-toggle,
+.page-id-36 .th-menu-wrapper li a {
+  color: #ffffff !important;
+}
+.page-id-36 .main-menu ul.sub-menu {
+  background-color: #120F0B !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+/* ===== Breadcrumb ===== */
 .page-id-36 .breadcumb-wrapper,
 .page-id-36 .breadcumb-area {
   background-color: #120F0B !important;
@@ -13,76 +87,45 @@
 }
 .page-id-36 .breadcumb-shape {
   background-color: #120F0B !important;
-  opacity: 0.35;
+  opacity: 0.3;
 }
 
-/* Light Elementor sections had white body text – force readable surface */
+/* ===== Force Elementor light sections dark ===== */
 .page-id-36 .elementor-element.elementor-element-3ded0a6,
 .page-id-36 .elementor-element.elementor-element-1f58235,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
-.page-id-36 .elementor-element.elementor-element-1f58235 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+.page-id-36 .elementor-element.elementor-element-8c1647e,
+.page-id-36 .elementor-element.elementor-element-a2bb03d,
+.page-id-36 .elementor-element.elementor-element-3cffdf9,
+.page-id-36 .elementor-element.elementor-element-cc6b057,
+.page-id-36 .elementor-element.elementor-element-5fb029d,
+.page-id-36 .elementor-element.elementor-element-5fb029c,
+.page-id-36 .e-con.e-parent,
+.page-id-36 .e-con.e-child {
+  --e-global-color-text: #ffffff;
+}
+.page-id-36 .elementor-element.elementor-element-3ded0a6,
+.page-id-36 .elementor-element.elementor-element-1f58235,
+.page-id-36 .elementor-element.elementor-element-3ded0a6:not(.elementor-motion-effects-element-type-background),
+.page-id-36 .elementor-element.elementor-element-1f58235:not(.elementor-motion-effects-element-type-background) {
   background-color: #120F0B !important;
   background-image: none !important;
 }
-.page-id-36 .elementor-element.elementor-element-3ded0a6,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 p,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 h1,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 h2,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 h3,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 h4,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 .sec-title,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 .sub-title,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 .box-title,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 .box-text,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 .team-title,
-.page-id-36 .elementor-element.elementor-element-3ded0a6 .team-desig,
-.page-id-36 .elementor-element.elementor-element-1f58235,
-.page-id-36 .elementor-element.elementor-element-1f58235 p,
-.page-id-36 .elementor-element.elementor-element-1f58235 h1,
-.page-id-36 .elementor-element.elementor-element-1f58235 h2,
-.page-id-36 .elementor-element.elementor-element-1f58235 h3,
-.page-id-36 .elementor-element.elementor-element-1f58235 .sec-title,
-.page-id-36 .elementor-element.elementor-element-1f58235 .sub-title,
-.page-id-36 .elementor-element.elementor-element-1f58235 .box-title,
-.page-id-36 .elementor-element.elementor-element-1f58235 .box-text {
-  color: #ffffff !important;
-}
 
-/* Marquee strip – near-invisible rgba text + overflow on mobile */
-.page-id-36 .marquee-content.style2 {
-  background-color: #120F0B !important;
-  margin-right: 0 !important;
-  margin-top: 24px !important;
-  padding: 28px 0 !important;
-  border-color: rgba(255,255,255,0.12) !important;
-}
-.page-id-36 .marquee .marquee-group.style3 .item,
-.page-id-36 .marquee .marquee-group .item {
-  color: #ffffff !important;
-}
-.page-id-36 .choose-box .box-title,
-.page-id-36 .choose-box .box-text,
-.page-id-36 .counter-card .box-number,
-.page-id-36 .counter-card .box-text {
-  color: #ffffff !important;
-}
-
-
-
-/* Features strip under intro – theme sets #F8F8F8 with global white text */
+/* Features / about strip under intro */
 .page-id-36 .about-area2,
-.page-id-36 .elementor-element-8c1647e .about-area2 {
+.page-id-36 .about-area3,
+.page-id-36 .about-box,
+.page-id-36 .about-box .media-body {
   background-color: #120F0B !important;
 }
 .page-id-36 .about-area2 .box-title,
-.page-id-36 .about-area2 .media-body,
-.page-id-36 .about-area2 .media-body p,
-.page-id-36 .about-area2 h3,
-.page-id-36 .about-area2 p {
+.page-id-36 .about-area2 p,
+.page-id-36 .about-box .box-title,
+.page-id-36 .about-box p {
   color: #ffffff !important;
 }
 
-/* Top intro: show right-side about image on mobile */
+/* Top intro image visible on mobile */
 .page-id-36 .elementor-element-b8142aa,
 .page-id-36 .elementor-element-b8142aa.elementor-invisible {
   visibility: visible !important;
@@ -95,34 +138,99 @@
   height: auto;
   display: block;
 }
-
 @media (max-width: 1024px) {
-  .page-id-36 .elementor-element-1df796f.e-9c6db22,
-  .page-id-36 .e-9c6db22 {
+  .page-id-36 .e-9c6db22,
+  .page-id-36 .elementor-element-1df796f {
     flex-direction: column !important;
     align-items: stretch !important;
   }
-  .page-id-36 .elementor-element-37d4501.e-b207486,
   .page-id-36 .e-b207486,
-  .page-id-36 .elementor-element-e75b00b.e-64024f2,
-  .page-id-36 .e-64024f2 {
+  .page-id-36 .e-64024f2,
+  .page-id-36 .elementor-element-37d4501,
+  .page-id-36 .elementor-element-e75b00b {
     width: 100% !important;
     max-width: 100% !important;
     flex: 0 0 auto !important;
   }
-  .page-id-36 .elementor-element-e75b00b {
-    order: 2;
-    margin-top: 24px;
-  }
-  .page-id-36 .elementor-element-37d4501 {
-    order: 1;
-  }
+  .page-id-36 .elementor-element-37d4501 { order: 1; }
+  .page-id-36 .elementor-element-e75b00b { order: 2; margin-top: 24px; }
 }
 
-/* General about-page overflow safety */
+/* Counters / choose / services / team / gallery / FAQ / testimonials / brands */
+.page-id-36 .counter-card,
+.page-id-36 .counter-card_wrapp,
+.page-id-36 .choose-box,
+.page-id-36 .service-card,
+.page-id-36 .team-card,
+.page-id-36 .team-card .box-content,
+.page-id-36 .team-card .box-img,
+.page-id-36 .gallery-card,
+.page-id-36 .accordion-card,
+.page-id-36 .accordion-body,
+.page-id-36 .testi-card,
+.page-id-36 .testi-box,
+.page-id-36 .brand-item,
+.page-id-36 .marquee-content.style2 {
+  background-color: #120F0B !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+.page-id-36 .team-card .box-title,
+.page-id-36 .team-card .team-desig,
+.page-id-36 .team-card .box-text,
+.page-id-36 .service-card .box-title,
+.page-id-36 .service-card .box-text,
+.page-id-36 .service-card p,
+.page-id-36 .choose-box .box-title,
+.page-id-36 .choose-box .box-text,
+.page-id-36 .choose-box p,
+.page-id-36 .counter-card .box-number,
+.page-id-36 .counter-card .box-text,
+.page-id-36 .accordion-card .accordion-button,
+.page-id-36 .accordion-card .accordion-body,
+.page-id-36 .accordion-card .accordion-body p,
+.page-id-36 .testi-card p,
+.page-id-36 .testi-card .box-title,
+.page-id-36 .testi-box p,
+.page-id-36 .testi-box .box-title,
+.page-id-36 .marquee .marquee-group .item,
+.page-id-36 .marquee .marquee-group.style3 .item {
+  color: #ffffff !important;
+}
+.page-id-36 .accordion-card .accordion-button:not(.collapsed) {
+  color: #be883d !important;
+}
+.page-id-36 .choose-box .box-icon {
+  background: #2B2B2B !important;
+}
+
+/* Marquee */
+.page-id-36 .marquee-content.style2 {
+  margin-right: 0 !important;
+  padding: 28px 0 !important;
+}
+
+/* Footer on about page */
+.page-id-36 .footer-wrapper,
+.page-id-36 footer,
+.page-id-36 .elementor-159,
+.page-id-36 .copyright-text,
+.page-id-36 .footer-links a,
+.page-id-36 .footer-widget,
+.page-id-36 .footer-widget p,
+.page-id-36 .footer-widget a,
+.page-id-36 .footer-widget h3,
+.page-id-36 .footer-widget .widget_title {
+  color: #ffffff !important;
+}
+.page-id-36 .footer-wrapper,
+.page-id-36 .elementor-159 .e-con.e-parent {
+  background-color: #120F0B !important;
+}
+
+/* Overflow / media safety */
 .page-id-36 .builder-page-wrapper,
-.page-id-36 .elementor-36,
-.page-id-36 .faren-fluid {
+.page-id-36 .elementor-36 {
   max-width: 100%;
   overflow-x: visible;
 }
@@ -135,95 +243,27 @@
 }
 
 @media (max-width: 991px) {
-  .page-id-36 .breadcumb-wrapper {
-    padding: 64px 16px 28px !important;
-  }
-  .page-id-36 .breadcumb-title {
-    font-size: 36px !important;
-    line-height: 1.15 !important;
-  }
-  .page-id-36 .marquee .marquee-group.style3 .item,
+  .page-id-36 .breadcumb-wrapper { padding: 64px 16px 28px !important; }
+  .page-id-36 .breadcumb-title { font-size: 36px !important; line-height: 1.15 !important; }
   .page-id-36 .marquee .marquee-group .item,
-  .page-id-36 .marquee.project-marquee .marquee-group .item {
-    font-size: 48px !important;
-    line-height: 1.15 !important;
-  }
+  .page-id-36 .marquee .marquee-group.style3 .item { font-size: 48px !important; line-height: 1.15 !important; }
 }
-
 @media (max-width: 767px) {
-  .page-id-36 .breadcumb-wrapper {
-    padding: 48px 14px 20px !important;
-  }
-  .page-id-36 .breadcumb-title {
-    font-size: 28px !important;
-  }
-  .page-id-36 .breadcumb-menu li,
-  .page-id-36 .breadcumb-menu a,
-  .page-id-36 .breadcumb-menu span {
-    font-size: 14px !important;
-  }
-  .page-id-36 .breadcumb-shape {
-    display: none !important;
-  }
-  .page-id-36 .elementor-element.elementor-element-49eb443 {
-    padding: 0 14px !important;
-    margin-bottom: 12px !important;
-  }
-  .page-id-36 .elementor-element.elementor-element-49eb443 .elementor-heading-title {
-    font-size: 26px !important;
-    line-height: 1.3 !important;
-  }
-  .page-id-36 .elementor-element.elementor-element-90faf09 {
-    font-size: 16px !important;
-    line-height: 1.65 !important;
-    padding: 0 14px !important;
-  }
-  .page-id-36 .counter-card_wrapp.style3 {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .page-id-36 .counter-card {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  .page-id-36 .marquee-content.style2 {
-    padding: 18px 0 !important;
-    margin-top: 16px !important;
-  }
-  .page-id-36 .marquee .marquee-group.style3 .item,
+  .page-id-36 .breadcumb-wrapper { padding: 48px 14px 20px !important; }
+  .page-id-36 .breadcumb-title { font-size: 28px !important; }
+  .page-id-36 .breadcumb-shape { display: none !important; }
+  .page-id-36 .elementor-element-49eb443 .elementor-heading-title { font-size: 26px !important; line-height: 1.3 !important; }
+  .page-id-36 .elementor-element-90faf09 { font-size: 16px !important; line-height: 1.65 !important; padding-left: 14px !important; padding-right: 14px !important; }
+  .page-id-36 .counter-card_wrapp.style3 { display: grid !important; grid-template-columns: 1fr 1fr; gap: 16px; }
   .page-id-36 .marquee .marquee-group .item,
-  .page-id-36 .marquee.project-marquee .marquee-group .item {
-    font-size: 28px !important;
-    line-height: 1.2 !important;
-  }
-  .page-id-36 .marquee .marquee-group .item img {
-    margin-right: 12px !important;
-    max-height: 36px;
-    width: auto;
-  }
-  .page-id-36 .choose-box {
-    padding: 16px !important;
-  }
-  .page-id-36 .choose-box .box-title {
-    font-size: 18px !important;
-  }
-  .page-id-36 .choose-box .box-text {
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-  }
-  .page-id-36 .swiper,
-  .page-id-36 .swiper-wrapper {
-    max-width: 100%;
-  }
+  .page-id-36 .marquee .marquee-group.style3 .item { font-size: 28px !important; line-height: 1.2 !important; }
+  .page-id-36 .choose-box .box-title { font-size: 18px !important; }
+  .page-id-36 .choose-box .box-text,
+  .page-id-36 .service-card .box-text,
+  .page-id-36 .accordion-card .accordion-button { font-size: 14px !important; }
 }
-
 @media (max-width: 480px) {
-  .page-id-36 .counter-card_wrapp.style3 {
-    grid-template-columns: 1fr;
-  }
-  .page-id-36 .breadcumb-title {
-    font-size: 24px !important;
-  }
+  .page-id-36 .counter-card_wrapp.style3 { grid-template-columns: 1fr; }
+  .page-id-36 .breadcumb-title { font-size: 24px !important; }
 }
 /*# sourceURL=nsa-about-us-fix-inline-css */

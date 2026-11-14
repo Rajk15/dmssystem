@@ -1,21 +1,19 @@
-# Neptune About Us – mobile + contrast fix
+# Neptune About Us – full-page contrast + mobile fix
 
 **Live URL:** https://neptunesolutionaus.com/designs/about-us/
 
-## Problems
-- Breadcrumb/title text was hard to read on the light breadcrumb background image.
-- Global white paragraph color made text disappear on Elementor light sections (`#F8F8F8`).
-- Marquee strip used near-invisible text color and overflowed on small screens.
-- Several blocks needed tighter mobile typography/spacing.
+## Issues
+- Sticky header turned light while menu links stayed light → unreadable
+- Global white paragraph color collided with theme light sections (`#F8F8F8`, white cards)
+- Intro right-side image clipped on mobile
+- Marquee / feature strips had near-invisible text
 
-## Fix (deployed on WordPress)
-Injected page-scoped CSS via `wp-content/themes/faren/functions.php` (markers `NSA_ABOUT_US_FIX_START` / `NSA_ABOUT_US_FIX_END`):
+## Fix (deployed)
+Page-scoped CSS in `wp-content/themes/faren/functions.php` (`NSA_ABOUT_US_FIX_*`):
+- Surfaces: `#120F0B`
+- Text/links/headings: `#ffffff` (accent hover `#be883d`)
+- Sticky header + mobile menu forced dark with white labels
+- About/features/team/service/choose/FAQ/testimonial/brand cards darkened
+- Intro image stacked/visible under 1024px
 
-- Force **color: #ffffff** and **background: #120F0B** on unreadable areas (breadcrumb, light Elementor sections, marquee).
-- Mobile breakpoints for title, counters, marquee, choose-cards, and overflow clipping.
-- Scoped to `.page-id-36` / About Us only.
-
-See `about-us-fix.css` for the CSS payload currently enqueued on the live page.
-
-## Follow-up (mobile intro image)
-Top section "Turning Your Vision Into Spaces You Love": on mobile the parent flex stayed `row`, so the right-side image was pushed off-screen/clipped. CSS now stacks the intro to a column under 1024px and forces the Elementor image widget visible (overrides `elementor-invisible` animation hide).
+See `about-us-fix.css` for the live payload.
