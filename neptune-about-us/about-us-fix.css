@@ -1,0 +1,177 @@
+/* Breadcrumb / page title – white text on #120F0B */
+.page-id-36 .breadcumb-wrapper,
+.page-id-36 .breadcumb-area {
+  background-color: #120F0B !important;
+  background-image: none !important;
+}
+.page-id-36 .breadcumb-title,
+.page-id-36 .breadcumb-menu li,
+.page-id-36 .breadcumb-menu a,
+.page-id-36 .breadcumb-menu span,
+.page-id-36 .breadcumb-menu li:after {
+  color: #ffffff !important;
+}
+.page-id-36 .breadcumb-shape {
+  background-color: #120F0B !important;
+  opacity: 0.35;
+}
+
+/* Light Elementor sections had white body text – force readable surface */
+.page-id-36 .elementor-element.elementor-element-3ded0a6,
+.page-id-36 .elementor-element.elementor-element-1f58235,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.page-id-36 .elementor-element.elementor-element-1f58235 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: #120F0B !important;
+  background-image: none !important;
+}
+.page-id-36 .elementor-element.elementor-element-3ded0a6,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 p,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 h1,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 h2,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 h3,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 h4,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 .sec-title,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 .sub-title,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 .box-title,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 .box-text,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 .team-title,
+.page-id-36 .elementor-element.elementor-element-3ded0a6 .team-desig,
+.page-id-36 .elementor-element.elementor-element-1f58235,
+.page-id-36 .elementor-element.elementor-element-1f58235 p,
+.page-id-36 .elementor-element.elementor-element-1f58235 h1,
+.page-id-36 .elementor-element.elementor-element-1f58235 h2,
+.page-id-36 .elementor-element.elementor-element-1f58235 h3,
+.page-id-36 .elementor-element.elementor-element-1f58235 .sec-title,
+.page-id-36 .elementor-element.elementor-element-1f58235 .sub-title,
+.page-id-36 .elementor-element.elementor-element-1f58235 .box-title,
+.page-id-36 .elementor-element.elementor-element-1f58235 .box-text {
+  color: #ffffff !important;
+}
+
+/* Marquee strip – near-invisible rgba text + overflow on mobile */
+.page-id-36 .marquee-content.style2 {
+  background-color: #120F0B !important;
+  margin-right: 0 !important;
+  margin-top: 24px !important;
+  padding: 28px 0 !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+.page-id-36 .marquee .marquee-group.style3 .item,
+.page-id-36 .marquee .marquee-group .item {
+  color: #ffffff !important;
+}
+.page-id-36 .choose-box .box-title,
+.page-id-36 .choose-box .box-text,
+.page-id-36 .counter-card .box-number,
+.page-id-36 .counter-card .box-text {
+  color: #ffffff !important;
+}
+
+/* General about-page overflow safety */
+.page-id-36 .builder-page-wrapper,
+.page-id-36 .elementor-36,
+.page-id-36 .faren-fluid {
+  max-width: 100%;
+  overflow-x: clip;
+}
+.page-id-36 img,
+.page-id-36 svg,
+.page-id-36 video,
+.page-id-36 iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .page-id-36 .breadcumb-wrapper {
+    padding: 64px 16px 28px !important;
+  }
+  .page-id-36 .breadcumb-title {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+  }
+  .page-id-36 .marquee .marquee-group.style3 .item,
+  .page-id-36 .marquee .marquee-group .item,
+  .page-id-36 .marquee.project-marquee .marquee-group .item {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-id-36 .breadcumb-wrapper {
+    padding: 48px 14px 20px !important;
+  }
+  .page-id-36 .breadcumb-title {
+    font-size: 28px !important;
+  }
+  .page-id-36 .breadcumb-menu li,
+  .page-id-36 .breadcumb-menu a,
+  .page-id-36 .breadcumb-menu span {
+    font-size: 14px !important;
+  }
+  .page-id-36 .breadcumb-shape {
+    display: none !important;
+  }
+  .page-id-36 .elementor-element.elementor-element-49eb443 {
+    padding: 0 14px !important;
+    margin-bottom: 12px !important;
+  }
+  .page-id-36 .elementor-element.elementor-element-49eb443 .elementor-heading-title {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+  }
+  .page-id-36 .elementor-element.elementor-element-90faf09 {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    padding: 0 14px !important;
+  }
+  .page-id-36 .counter-card_wrapp.style3 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .page-id-36 .counter-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .page-id-36 .marquee-content.style2 {
+    padding: 18px 0 !important;
+    margin-top: 16px !important;
+  }
+  .page-id-36 .marquee .marquee-group.style3 .item,
+  .page-id-36 .marquee .marquee-group .item,
+  .page-id-36 .marquee.project-marquee .marquee-group .item {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+  .page-id-36 .marquee .marquee-group .item img {
+    margin-right: 12px !important;
+    max-height: 36px;
+    width: auto;
+  }
+  .page-id-36 .choose-box {
+    padding: 16px !important;
+  }
+  .page-id-36 .choose-box .box-title {
+    font-size: 18px !important;
+  }
+  .page-id-36 .choose-box .box-text {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+  .page-id-36 .swiper,
+  .page-id-36 .swiper-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-id-36 .counter-card_wrapp.style3 {
+    grid-template-columns: 1fr;
+  }
+  .page-id-36 .breadcumb-title {
+    font-size: 24px !important;
+  }
+}
+/*# sourceURL=nsa-about-us-fix-inline-css */
