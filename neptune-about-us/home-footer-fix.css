@@ -1,0 +1,26 @@
+.home footer,
+.home .elementor-486,
+.home .elementor-486 .e-con,
+.home .elementor-486 .e-con.e-parent,
+.home .elementor-486 .e-con.e-child,
+.home .footer-wrapper,
+.home .footer-layout1,
+.home .elementor-element-564df91,
+.home .elementor-element-ef11af9,
+.home .elementor-element-b4f9c46,
+.page-id-5681 footer,
+.page-id-5681 .elementor-486,
+.page-id-5681 .elementor-486 .e-con,
+.page-id-5681 .footer-wrapper,
+.page-id-5681 .footer-layout1,
+.page-id-5681 .elementor-element-564df91,
+.page-id-5681 .elementor-element-ef11af9,
+.page-id-5681 .elementor-element-b4f9c46,
+.home .elementor-element-564df91:not(.elementor-motion-effects-element-type-background),
+.home .elementor-element-564df91 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.page-id-5681 .elementor-element-564df91:not(.elementor-motion-effects-element-type-background),
+.page-id-5681 .elementor-element-564df91 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: #000000 !important;
+  background-image: none !important;
+}
+/*# sourceURL=nsa-home-footer-fix-inline-css */
