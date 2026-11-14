@@ -200,6 +200,27 @@
 .page-id-36 .accordion-card .accordion-button:not(.collapsed) {
   color: #be883d !important;
 }
+
+.page-id-36 .team-item,
+.page-id-36 .team-item .box-content,
+.page-id-36 .service-item,
+.page-id-36 .service-item .box-content,
+.page-id-36 .th-team,
+.page-id-36 .client-logo-wrap,
+.page-id-36 .brand-area {
+  background-color: #120F0B !important;
+  color: #ffffff !important;
+}
+.page-id-36 .team-item .box-title,
+.page-id-36 .team-item .box-title a,
+.page-id-36 .team-item .team-desig,
+.page-id-36 .service-item .box-title,
+.page-id-36 .service-item .box-title a,
+.page-id-36 .service-item .box-text,
+.page-id-36 .service-item .line-btn {
+  color: #ffffff !important;
+}
+
 .page-id-36 .choose-box .box-icon {
   background: #2B2B2B !important;
 }
