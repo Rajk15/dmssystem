@@ -1,0 +1,18 @@
+.home .grid-overlay,
+.home .grid-overlay.common-page,
+.home #show-grid,
+.home .grid-line,
+.page-id-5681 .grid-overlay,
+.page-id-5681 .grid-overlay.common-page,
+.page-id-5681 #show-grid,
+.page-id-5681 .grid-line,
+body.home.grid-show .grid-overlay,
+body.page-id-5681.grid-show .grid-overlay {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+/*# sourceURL=nsa-home-grid-fix-inline-css */
