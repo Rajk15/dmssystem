@@ -67,12 +67,50 @@
   color: #ffffff !important;
 }
 
+
+/* Top intro: show right-side about image on mobile */
+.page-id-36 .elementor-element-b8142aa,
+.page-id-36 .elementor-element-b8142aa.elementor-invisible {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.page-id-36 .elementor-element-b8142aa img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .page-id-36 .elementor-element-1df796f.e-9c6db22,
+  .page-id-36 .e-9c6db22 {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .page-id-36 .elementor-element-37d4501.e-b207486,
+  .page-id-36 .e-b207486,
+  .page-id-36 .elementor-element-e75b00b.e-64024f2,
+  .page-id-36 .e-64024f2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+  .page-id-36 .elementor-element-e75b00b {
+    order: 2;
+    margin-top: 24px;
+  }
+  .page-id-36 .elementor-element-37d4501 {
+    order: 1;
+  }
+}
+
 /* General about-page overflow safety */
 .page-id-36 .builder-page-wrapper,
 .page-id-36 .elementor-36,
 .page-id-36 .faren-fluid {
   max-width: 100%;
-  overflow-x: clip;
+  overflow-x: visible;
 }
 .page-id-36 img,
 .page-id-36 svg,

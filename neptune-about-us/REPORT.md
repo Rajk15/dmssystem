@@ -16,3 +16,6 @@ Injected page-scoped CSS via `wp-content/themes/faren/functions.php` (markers `N
 - Scoped to `.page-id-36` / About Us only.
 
 See `about-us-fix.css` for the CSS payload currently enqueued on the live page.
+
+## Follow-up (mobile intro image)
+Top section "Turning Your Vision Into Spaces You Love": on mobile the parent flex stayed `row`, so the right-side image was pushed off-screen/clipped. CSS now stacks the intro to a column under 1024px and forces the Elementor image widget visible (overrides `elementor-invisible` animation hide).
