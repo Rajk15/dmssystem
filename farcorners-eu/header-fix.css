@@ -1,0 +1,56 @@
+
+#lang-change,
+#google_translate_element{
+  display:inline-flex !important;
+  align-items:center !important;
+  max-width:180px !important;
+  vertical-align:middle !important;
+}
+#google_translate_element .goog-te-gadget,
+#google_translate_element .goog-te-gadget-simple{
+  background:transparent !important;
+  background-color:transparent !important;
+  border:1px solid rgba(255,255,255,.4) !important;
+  border-radius:4px !important;
+  padding:3px 10px !important;
+  font-size:12px !important;
+  line-height:18px !important;
+  color:#fff !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  box-shadow:none !important;
+  height:auto !important;
+  width:auto !important;
+}
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value,
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span,
+#google_translate_element .goog-te-gadget-simple a,
+#google_translate_element .goog-te-gadget-simple a:link,
+#google_translate_element .goog-te-gadget-simple a:visited,
+#google_translate_element .goog-te-gadget span{
+  color:#fff !important;
+  background:transparent !important;
+  border:none !important;
+  text-decoration:none !important;
+  font-size:12px !important;
+}
+#google_translate_element img,
+#google_translate_element .goog-te-gadget-icon{
+  display:none !important;
+}
+#google_translate_element .goog-te-combo{
+  background:#111 !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.4) !important;
+  border-radius:4px !important;
+  padding:2px 8px !important;
+  font-size:12px !important;
+  max-width:170px !important;
+  margin:0 !important;
+}
+.top-bar .admin-area.dropdown{display:flex !important;align-items:center !important}
+.goog-te-banner-frame.skiptranslate,
+.goog-te-balloon-frame{display:none !important}
+body{top:0 !important}
+.top-bar #google_translate_element,
+.top-bar #google_translate_element *{box-sizing:border-box !important}
